@@ -1,0 +1,66 @@
+video {
+    object-fit: cover;
+    width: 100%;
+    height:100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.wbdv-homepage-container {
+    background: url("https://fast.adamlouis.com/wp-content/uploads/2016/07/Health-and-Fitness-Online-booking-and-payments-website-Facebook-Wifi-Business-phone-systems-Business-Email-AdamLouis.jpg")
+center center/cover no-repeat;
+    height: 100vh;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);
+    object-fit: contain;
+    justify-content: center;
+
+}
+
+.wbdv-homepage-buttons {
+    margin-top: 200px;
+}
+
+.wbdv-heading-body{
+    color: #ffffff;
+    font-size: 50px;
+    margin-top: -100px;
+}
+
+.wbdv-heading-paragraph {
+    margin-top: 8px;
+    color:#ffffff;
+    font-size: 25px;
+}
+
+@media screen and (max-width: 960px) {
+    .wbdv-heading-body {
+        font-size: 70px;
+        margin-top: -150px;
+    }
+}
+
+@media screen and(max-width: 768px) {
+    .wbdv-heading-body {
+        font-size: 50px;
+        margin-top: -100px;
+    }
+
+    .wbdv-heading-paragraph {
+        font-size: 30px;
+    }
+
+    .wbdv-btn-mobile {
+        display: block;
+        text-decoration: none;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+
