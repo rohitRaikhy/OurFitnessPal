@@ -1,6 +1,7 @@
 import React from "react"
 import "./HomePageBody.Style.css"
 import HomePageCards from "./HomePageCards";
+import SearchBar from "./SearchBar";
 
 const HomePageBody = () =>
     <div>
@@ -30,7 +31,10 @@ const HomePageBody = () =>
         </div>
     </div>
         </div>
-<HomePageCards/>
+        <div className="wbdv-homepage-container-search">
+{/*<HomePageCards/>*/}
+    <SearchBar/>
+    </div>
     </div>
 
 

@@ -20,6 +20,22 @@ center center/cover no-repeat;
 
 }
 
+.wbdv-homepage-container-search {
+        /*background: url("https://i.pinimg.com/originals/3f/6a/b7/3f6ab7764a574917963fa17e46876a8e.jpg")*/
+    background: #ffffff
+    center center/cover no-repeat;
+    height: 40vh;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    /*box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);*/
+    object-fit: contain;
+    justify-content: center;
+
+}
+
+
 .wbdv-homepage-buttons {
     margin-top: 200px;
 }
