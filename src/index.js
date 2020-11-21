@@ -16,7 +16,7 @@ import HomeComponent from "./components/HomeComponent";
 import searchReducer from "./reducers/SearchReducer";
 import SearchComponent from "./components/SearchComponent";
 import resultItemReducer from "./reducers/ResultItemReducer";
-import RouterManagerComponent from "./Components/HomePageComponents/RouterManagerComponent";
+import RouterManagerComponent from "./components/HomePageComponents/RouterManagerComponent";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css"
 
