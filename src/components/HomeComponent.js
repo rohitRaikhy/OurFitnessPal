@@ -2,17 +2,17 @@
 
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import LoginComponent from "./LoginComponent";
-import RegisterComponent from "./RegisterComponent";
-import ProfileComponent from "./ProfileComponent";
+import LoginComponent from "./HomePageComponents/LoginComponent";
+import ProfileComponent from "./HomePageComponents/ProfileComponent";
 import { BrowserRouter, Link, Route } from "react-router-dom";
 // import {findAllUsers} from "../services/HomeService";
 import {connect} from "react-redux";
 import userService from "../services/UserService";
 import SearchComponent from "./SearchComponent";
 import ResultItemComponent from "./ResultItemComponent";
-import userService from "../../services/UserService";
-import HomePage from "./HomePage";
+import UserService from "../services/UserService";
+import HomePage from "./HomePageComponents/HomePage";
+import RegisterComponent from "./HomePageComponents/RegisterComponent";
 
 class HomeComponent extends React.Component {
   // state = {

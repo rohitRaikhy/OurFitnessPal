@@ -56,6 +56,13 @@ const homePageHeading = () =>
                                     className="sr-only">
                         (current)</span>Privacy Page</NavLink>
                             </li>
+                            <li className="nav-item nav-link">
+                                <NavLink
+                                    className = "wbdv-link"
+                                    to="/ourfitnesspal/search"><span
+                                    className="sr-only">
+                        (current)</span>Search Food</NavLink>
+                            </li>
                         </ul>
 
                     </div>

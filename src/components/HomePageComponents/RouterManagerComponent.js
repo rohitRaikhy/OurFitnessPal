@@ -16,6 +16,8 @@ import "./HomePage.Style.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css"
 import PrivacyComponent from "../PrivacyPage/PrivacyComponent"
+import SearchComponent from "../SearchComponent";
+import ResultItemComponent from "../ResultItemComponent";
 
 class RouterManagerComponent extends React.Component {
     // state = {
@@ -64,6 +66,10 @@ class RouterManagerComponent extends React.Component {
                     <Route path="/ourfitnesspal/profile" exact>
                         <ProfileComponent/>
                     </Route>
+                    <Route path={["/ourfitnesspal/search"]} exact >
+                        <SearchComponent/>
+                    </Route>
+                    <Route path="/ourfitnesspal/search/:itemId" component={ResultItemComponent}/>
                 </div>
                 ,
             </BrowserRouter>

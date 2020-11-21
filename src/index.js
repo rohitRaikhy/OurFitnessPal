@@ -16,6 +16,9 @@ import HomeComponent from "./components/HomeComponent";
 import searchReducer from "./reducers/SearchReducer";
 import SearchComponent from "./components/SearchComponent";
 import resultItemReducer from "./reducers/ResultItemReducer";
+import RouterManagerComponent from "./Components/HomePageComponents/RouterManagerComponent";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "font-awesome/css/font-awesome.css"
 
 const reducers = combineReducers({
   loginReducer: loginReducer,
@@ -23,15 +26,6 @@ const reducers = combineReducers({
   userReducer: userReducer,
   searchReducer: searchReducer,
   resultItemReducer: resultItemReducer,
-
-import RouterManagerComponent from "./Components/HomePageComponents/RouterManagerComponent";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "font-awesome/css/font-awesome.css"
-
-const reducers = combineReducers({
-    loginReducer: loginReducer,
-    registerReducer: registerReducer,
-    userReducer: userReducer,
 })
 const store = createStore(reducers);
 
@@ -39,7 +33,7 @@ ReactDOM.render(
     <Provider store={store}>
       {/*<RegisterComponent/>*/}
       {/*<SearchComponent/>*/}
-      <HomeComponent/>
+      */}
         {/*<RegisterComponent/>*/}
         {/*<HomeComponent/>*/}
         <RouterManagerComponent/>
