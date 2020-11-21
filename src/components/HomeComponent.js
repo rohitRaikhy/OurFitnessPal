@@ -7,6 +7,8 @@ import { BrowserRouter, Link, Route } from "react-router-dom";
 // import {findAllUsers} from "../services/HomeService";
 import {connect} from "react-redux";
 import userService from "../services/UserService";
+import SearchComponent from "./SearchComponent";
+import ResultItemComponent from "./ResultItemComponent";
 
 class HomeComponent extends React.Component {
   // state = {
@@ -32,7 +34,8 @@ class HomeComponent extends React.Component {
             <Link to="/ourfitnesspal">HOME</Link> |
             <Link to="/ourfitnesspal/login">Login</Link> |
             <Link to="/ourfitnesspal/register">Register</Link> |
-            <Link to="/ourfitnesspal/profile">Profile</Link>
+            <Link to="/ourfitnesspal/profile">Profile</Link> |
+            <Link to="/ourfitnesspal/search">Search</Link>
             <Route path="/ourfitnesspal" exact>
               <HomeComponent/>
             </Route>
@@ -45,6 +48,12 @@ class HomeComponent extends React.Component {
             <Route path="/ourfitnesspal/profile" exact>
               <ProfileComponent/>
             </Route>
+            <Route path={["/ourfitnesspal/search"]} exact >
+              <SearchComponent/>
+            </Route>
+            <Route path="/ourfitnesspal/search/:itemId" component={ResultItemComponent}/>
+            {/*  <ResultItemComponent />*/}
+            {/*</Route>*/}
           </div>
           ,
         </BrowserRouter>
