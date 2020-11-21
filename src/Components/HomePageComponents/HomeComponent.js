@@ -6,8 +6,8 @@ import ProfileComponent from "./ProfileComponent";
 import { BrowserRouter, Link, Route } from "react-router-dom";
 // import {findAllUsers} from "../services/HomeService";
 import {connect} from "react-redux";
-import userService from "../services/UserService";
-import HomePage from "./HomePageComponents/HomePage";
+import userService from "../../services/UserService";
+import HomePage from "./HomePage";
 
 class HomeComponent extends React.Component {
   // state = {

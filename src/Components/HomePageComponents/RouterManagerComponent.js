@@ -1,8 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import LoginComponent from "../LoginComponent";
-import RegisterComponent from "../RegisterComponent";
-import ProfileComponent from "../ProfileComponent";
+import LoginComponent from "./LoginComponent";
+import RegisterComponent from "./RegisterComponent";
+import ProfileComponent from "./ProfileComponent";
 import {BrowserRouter as Router, BrowserRouter, Link, Route, Switch} from "react-router-dom";
 // import {findAllUsers} from "../services/HomeService";
 import {connect} from "react-redux";
