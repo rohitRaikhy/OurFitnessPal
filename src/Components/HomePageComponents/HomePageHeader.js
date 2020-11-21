@@ -1,5 +1,6 @@
 import React from "react"
-import "./HomePage.Style.CSS.css"
+import "./HomePage.Style.css"
+import {Link, NavLink} from "react-router-dom";
 
 const homePageHeading = () =>
     <div className="container">
@@ -18,18 +19,42 @@ const homePageHeading = () =>
 
                     <div className="collapse navbar-collapse wbdv-button wbdv-list-layout wbdv-padding" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">
-                            <li className="nav-item active">
-                                <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Sign Up <span
+                            {/*<li className="nav-item active">*/}
+                            {/*    <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>*/}
+                            {/*</li>*/}
+                            <li className="nav-item nav-link">
+                                <NavLink
+                                    className = "wbdv-link"
+                                    to="/ourfitnesspal/login"><span
                                     className="sr-only">
-                        (current)</span></a>
+                        (current)</span>Login</NavLink>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Login<span
+                        {/*    <li className="nav-item">*/}
+                        {/*        <a className="nav-link" href="#">Login<span*/}
+                        {/*            className="sr-only">*/}
+                        {/*(current)</span></a>*/}
+                        {/*    </li>*/}
+                            <li className="nav-item nav-link">
+                                <NavLink
+                                    className = "wbdv-link"
+                                    to="/ourfitnesspal/register"><span
                                     className="sr-only">
-                        (current)</span></a>
+                        (current)</span>Register</NavLink>
+                            </li>
+                            <li className="nav-item nav-link">
+                                <NavLink
+                                    className = "wbdv-link"
+                                    to="/ourfitnesspal/profile"><span
+                                    className="sr-only">
+                        (current)</span>Profile</NavLink>
+                            </li>
+
+                            <li className="nav-item nav-link">
+                                <NavLink
+                                    className = "wbdv-link"
+                                    to="/"><span
+                                    className="sr-only">
+                        (current)</span>Privacy Page</NavLink>
                             </li>
                         </ul>
 

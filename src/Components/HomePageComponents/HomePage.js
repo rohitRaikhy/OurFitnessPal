@@ -1,6 +1,6 @@
 import React from "react"
 import HomePageHeader from "./HomePageHeader"
-import "./HomePage.Style.CSS.css"
+import "./HomePage.Style.css"
 import NavbarTwo from "./navbarTwo"
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import homePageBody from "./HomePageBody"
@@ -16,9 +16,9 @@ const HomePage = () =>
         <Router>
             {/*<NavbarTwo/>*/}
             {/*<HomePageBody/>*/}
-            <HomePageHeader/>
+            <HomePageBody/>
         <Switch>
-        <Route path = "/" exact component={HomePageBody}/>
+        <Route path = "/ourFitnessPal" exact component={HomePageBody}/>
         </Switch>
         </Router>
     </div>

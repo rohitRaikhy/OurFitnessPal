@@ -7,6 +7,7 @@ import { BrowserRouter, Link, Route } from "react-router-dom";
 // import {findAllUsers} from "../services/HomeService";
 import {connect} from "react-redux";
 import userService from "../services/UserService";
+import HomePage from "./HomePageComponents/HomePage";
 
 class HomeComponent extends React.Component {
   // state = {
@@ -34,7 +35,8 @@ class HomeComponent extends React.Component {
             <Link to="/ourfitnesspal/register">Register</Link> |
             <Link to="/ourfitnesspal/profile">Profile</Link>
             <Route path="/ourfitnesspal" exact>
-              <HomeComponent/>
+              {/*<HomeComponent/>*/}
+              <HomePage/>
             </Route>
             <Route path="/ourfitnesspal/login" exact>
               <LoginComponent/>

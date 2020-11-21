@@ -2,8 +2,15 @@ import React from "react"
 import "./HomePageBody.Style.css"
 import HomePageCards from "./HomePageCards";
 import SearchBar from "./SearchBar";
+import HomePageHeader from "./HomePageHeader";
+import "./Cards.css"
+import HomePageCardItems from "./HomePageCardItems";
 
 const HomePageBody = () =>
+    <div>
+    <div>
+        <HomePageHeader/>
+    </div>
     <div>
         <div>
     <div className="wbdv-homepage-container">
@@ -32,8 +39,10 @@ const HomePageBody = () =>
     </div>
         </div>
         <div className="wbdv-homepage-container-search">
-{/*<HomePageCards/>*/}
     <SearchBar/>
+    {/*<HomePageCards/>*/}
+    {/*<HomePageCardItems/>*/}
+    </div>
     </div>
     </div>
 

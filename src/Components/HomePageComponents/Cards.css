@@ -1,8 +1,10 @@
 .wbdv-homepage-cards {
     width: 18rem;
+    margin-right: 100px;
+    margin-top: 20px;
 }
 
-.cards {
+.wbdv-cards {
     padding: 4rem;
     background: #fff;
 }
@@ -11,7 +13,7 @@ h1 {
     text-align: center;
 }
 
-.cards__container {
+.wbdv-cards-container {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -20,23 +22,23 @@ h1 {
     margin: 0 auto;
 }
 
-.cards__wrapper {
+.wbdv-cards-wrapper {
     position: relative;
     margin: 50px 0 45px;
 }
 
-.cards__items {
+.wbdv-margin-cards {
     margin-bottom: 24px;
 }
 
-.cards__item {
+.wbdv-cards-items {
     display: flex;
     flex: 1;
     margin: 0 1rem;
     border-radius: 10px;
 }
 
-.cards__item__link {
+.wbdv-cards-links {
     display: flex;
     flex-flow: column;
     width: 100%;
@@ -48,19 +50,19 @@ h1 {
     text-decoration: none;
 }
 
-.cards__item__pic-wrap {
+.wbdv-car-pics {
     position: relative;
     width: 100%;
     padding-top: 67%;
     overflow: hidden;
 }
 
-.fade-img {
+.wbdv-img-fade {
     animation-name: fade-img;
     animation-duration: 2s;
 }
 
-.cards__item__pic-wrap::after {
+.wbdv-car-pics::after {
     content: attr(data-category);
     position: absolute;
     bottom: 0;
@@ -74,7 +76,7 @@ h1 {
     box-sizing: border-box;
 }
 
-.cards__item__img {
+.wbdv-cards-item-img {
     position: absolute;
     top: 0;
     right: 0;
@@ -89,18 +91,23 @@ h1 {
     transition: all 0.2s linear;
 }
 
-.cards__item__img:hover {
+.wbdv-cards-item-img:hover {
     transform: scale(1.1);
 }
 
-.cards__item__info {
+.wbdv-hover-cards {
     padding: 20px 30px 30px;
 }
 
-.cards__item__text {
+.wbdv-cards-text {
     color: #252e48;
     font-size: 18px;
     line-height: 24px;
+}
+
+.wbdv-search-margin {
+    margin-top: 60px;
+    /*margin-bottom: -50px;*/
 }
 
 @media only screen and (min-width: 1200px) {
@@ -110,13 +117,13 @@ h1 {
 }
 
 @media only screen and (min-width: 1024px) {
-    .cards__items {
+    .wbdv-margin-cards {
         display: flex;
     }
 }
 
 @media only screen and (max-width: 1024px) {
-    .cards__item {
+    .wbdv-cards-items {
         margin-bottom: 2rem;
     }
 }
