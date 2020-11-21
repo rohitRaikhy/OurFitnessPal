@@ -1,14 +1,15 @@
+// #Home component
+
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import LoginComponent from "./HomePageComponents/LoginComponent";
-import RegisterComponent from "./HomePageComponents/RegisterComponent";
-import ProfileComponent from "./HomePageComponents/ProfileComponent";
+import LoginComponent from "./LoginComponent";
+import RegisterComponent from "./RegisterComponent";
+import ProfileComponent from "./ProfileComponent";
 import { BrowserRouter, Link, Route } from "react-router-dom";
 // import {findAllUsers} from "../services/HomeService";
 import {connect} from "react-redux";
-import userService from "../services/UserService";
-import SearchComponent from "./SearchComponent";
-import ResultItemComponent from "./ResultItemComponent";
+import userService from "../../services/UserService";
+import HomePage from "./HomePage";
 
 class HomeComponent extends React.Component {
   // state = {
@@ -34,10 +35,10 @@ class HomeComponent extends React.Component {
             <Link to="/ourfitnesspal">HOME</Link> |
             <Link to="/ourfitnesspal/login">Login</Link> |
             <Link to="/ourfitnesspal/register">Register</Link> |
-            <Link to="/ourfitnesspal/profile">Profile</Link> |
-            <Link to="/ourfitnesspal/search">Search</Link>
+            <Link to="/ourfitnesspal/profile">Profile</Link>
             <Route path="/ourfitnesspal" exact>
-              <HomeComponent/>
+              {/*<HomeComponent/>*/}
+              <HomePage/>
             </Route>
             <Route path="/ourfitnesspal/login" exact>
               <LoginComponent/>
@@ -48,12 +49,6 @@ class HomeComponent extends React.Component {
             <Route path="/ourfitnesspal/profile" exact>
               <ProfileComponent/>
             </Route>
-            <Route path={["/ourfitnesspal/search"]} exact >
-              <SearchComponent/>
-            </Route>
-            <Route path="/ourfitnesspal/search/:itemId" component={ResultItemComponent}/>
-            {/*  <ResultItemComponent />*/}
-            {/*</Route>*/}
           </div>
           ,
         </BrowserRouter>
