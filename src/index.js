@@ -33,7 +33,7 @@ ReactDOM.render(
     <Provider store={store}>
       {/*<RegisterComponent/>*/}
       {/*<SearchComponent/>*/}
-      */}
+      {/**!/*/}
         {/*<RegisterComponent/>*/}
         {/*<HomeComponent/>*/}
         <RouterManagerComponent/>
