@@ -1,12 +1,12 @@
+// #index
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
-import LoginComponent from "./components/LoginComponent";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
-import RegisterComponent from "./components/RegisterComponent";
 import {combineReducers, createStore} from "redux";
 import {Provider} from "react-redux";
 import loginReducer from "./reducers/LoginReducer";
@@ -23,6 +23,15 @@ const reducers = combineReducers({
   userReducer: userReducer,
   searchReducer: searchReducer,
   resultItemReducer: resultItemReducer,
+
+import RouterManagerComponent from "./Components/HomePageComponents/RouterManagerComponent";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "font-awesome/css/font-awesome.css"
+
+const reducers = combineReducers({
+    loginReducer: loginReducer,
+    registerReducer: registerReducer,
+    userReducer: userReducer,
 })
 const store = createStore(reducers);
 
@@ -31,12 +40,17 @@ ReactDOM.render(
       {/*<RegisterComponent/>*/}
       {/*<SearchComponent/>*/}
       <HomeComponent/>
+        {/*<RegisterComponent/>*/}
+        {/*<HomeComponent/>*/}
+        <RouterManagerComponent/>
+        {/*<HomePage/>*/}
     </Provider>,
-  // <React.StrictMode>
-  //   {/*<LoginComponent />*/}
-  //
-  // </React.StrictMode>,
-  document.getElementById('root')
+    // <React.StrictMode>
+    //   {/*<LoginComponent />*/}
+    //
+    // </React.StrictMode>,
+
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

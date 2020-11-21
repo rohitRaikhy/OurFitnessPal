@@ -3,8 +3,8 @@ import {connect} from "react-redux";
 import  { Redirect, BrowserRouter, Link, Route } from "react-router-dom";
 import ProfileComponent from "./ProfileComponent";
 import RegisterComponent from "./RegisterComponent";
-import userReducer from "../reducers/UserReducer";
-import {verifyUser, onChangeUserId, onChangePassword} from "../actions/LoginActions";
+import userReducer from "../../reducers/UserReducer";
+import {verifyUser, onChangeUserId, onChangePassword} from "../../actions/LoginActions";
 
 
 const LoginComponent = ({

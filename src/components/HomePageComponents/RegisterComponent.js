@@ -9,10 +9,10 @@ import {
   onChangePassword,
   setUserExists,
   setPasswordMatching
-} from "../actions/RegisterAction";
-import registerReducer from "../reducers/RegisterReducer";
+} from "../../actions/RegisterAction";
+import registerReducer from "../../reducers/RegisterReducer";
 import LoginComponent from "./LoginComponent";
-import userReducer from "../reducers/UserReducer";
+import userReducer from "../../reducers/UserReducer";
 
 
 const RegisterComponent = ({

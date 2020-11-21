@@ -1,3 +1,5 @@
+// #Home component
+
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LoginComponent from "./LoginComponent";
@@ -9,6 +11,8 @@ import {connect} from "react-redux";
 import userService from "../services/UserService";
 import SearchComponent from "./SearchComponent";
 import ResultItemComponent from "./ResultItemComponent";
+import userService from "../../services/UserService";
+import HomePage from "./HomePage";
 
 class HomeComponent extends React.Component {
   // state = {
@@ -37,7 +41,8 @@ class HomeComponent extends React.Component {
             <Link to="/ourfitnesspal/profile">Profile</Link> |
             <Link to="/ourfitnesspal/search">Search</Link>
             <Route path="/ourfitnesspal" exact>
-              <HomeComponent/>
+              {/*<HomeComponent/>*/}
+              <HomePage/>
             </Route>
             <Route path="/ourfitnesspal/login" exact>
               <LoginComponent/>
