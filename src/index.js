@@ -12,6 +12,18 @@ import {Provider} from "react-redux";
 import loginReducer from "./reducers/LoginReducer";
 import registerReducer from "./reducers/RegisterReducer";
 import userReducer from "./reducers/UserReducer"
+import HomeComponent from "./components/HomeComponent";
+import searchReducer from "./reducers/SearchReducer";
+import SearchComponent from "./components/SearchComponent";
+import resultItemReducer from "./reducers/ResultItemReducer";
+
+const reducers = combineReducers({
+  loginReducer: loginReducer,
+  registerReducer: registerReducer,
+  userReducer: userReducer,
+  searchReducer: searchReducer,
+  resultItemReducer: resultItemReducer,
+
 import RouterManagerComponent from "./Components/HomePageComponents/RouterManagerComponent";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css"
@@ -25,6 +37,9 @@ const store = createStore(reducers);
 
 ReactDOM.render(
     <Provider store={store}>
+      {/*<RegisterComponent/>*/}
+      {/*<SearchComponent/>*/}
+      <HomeComponent/>
         {/*<RegisterComponent/>*/}
         {/*<HomeComponent/>*/}
         <RouterManagerComponent/>
