@@ -24,26 +24,46 @@ const ProfileComponent = ({
         {/*</div>*/}
 
 
-
-
-        <h4 className="text-info">first name: </h4>
-        <h4 className="wbdv-profile-search">Search for a member</h4>
+        {/*<h4 className="wbdv-profile-search">Search for a member</h4>*/}
         <div className="col-sm-4">
             <span>
-            <input id="foodNameFld"
+
+                <form>
+        <div className="form-group row">
+          <label htmlFor="searchProfile" className="col-sm-2 col-form-label">
+            Profile Search</label>
+          <div className="col-sm-10">
+            <input id="searchProfile"
                    className="form-control"
                    placeholder="Enter a profile name"
                    onChange={(event) => onChangeSearchName(event.target.value)}/>
-
-                     {/*<Route path="/ourfitnesspal/userProfile" component={userSearchComponent({user})}/>*/}
-                    <Link to={`/ourfitnesspal/userProfile/${searchName}`}>
+          </div>
+        </div>
+                </form>
+              <Link to={`/ourfitnesspal/userProfile/${searchName}`}>
                     <button
-                    onClick={() => findUser(searchName)}
-                    className="btn btn-primary">
+                        onClick={() => findUser(searchName)}
+                        className="btn btn-primary">
                     Search
                     </button>
                    </Link>
-                </span>
+             </span>
+
+            {/*This works but changed to above for changing view of big to small screen sizes*/}
+            {/*<input id="foodNameFld"*/}
+            {/*       className="form-control"*/}
+            {/*       placeholder="Enter a profile name"*/}
+            {/*       onChange={(event) => onChangeSearchName(event.target.value)}/>*/}
+
+            {/*         /!*<Route path="/ourfitnesspal/userProfile" component={userSearchComponent({user})}/>*!/*/}
+            {/*        <Link to={`/ourfitnesspal/userProfile/${searchName}`}>*/}
+            {/*        <button*/}
+            {/*        onClick={() => findUser(searchName)}*/}
+            {/*        className="btn btn-primary">*/}
+            {/*        Search*/}
+            {/*        </button>*/}
+            {/*       </Link>*/}
+            {/*    </span>*/}
         </div>
     </div>
 

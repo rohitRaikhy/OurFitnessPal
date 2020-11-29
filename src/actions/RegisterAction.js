@@ -1,11 +1,21 @@
 import registerService from "../services/RegisterService";
 import userService from "../services/UserService";
 
-export const createUser = (dispatch, userId, email, password) => {
+// export const createUser = (dispatch, userId, email, password) => {
+//   let newUser = {
+//     userId: userId,
+//     email: email,
+//     password: password
+//   }
+
+//TODO: ADDED HERE TO ADD MORE INFO ABOUT USER
+export const createUser = (dispatch, userId, email, password, weight, heightFt) => {
   let newUser = {
     userId: userId,
     email: email,
-    password: password
+    password: password,
+    weight: weight,
+    heightFt: heightFt
   }
   userService.createUser(newUser).then(newUser => {
     console.log(JSON.stringify(newUser))
@@ -33,3 +43,10 @@ export const onChangeEmail = (dispatch, email) =>
 
 export const onChangePassword = (dispatch, password) =>
     dispatch({type:"ONCHANGE_PASSWORD", password})
+
+// ADDED HERE TO ADD TO PROFILE FOR ADDED USER INFO
+export const onChangeCurrentWeight = (dispatch, weight) =>
+    dispatch({type:"ONCHANGE_CURRENT_WEIGHT", weight})
+
+export const onChangeHeight = (dispatch, heightFt) =>
+    dispatch({type:"ONCHANGE_HEIGHT", heightFt})

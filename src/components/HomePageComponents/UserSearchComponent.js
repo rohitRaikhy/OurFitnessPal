@@ -7,11 +7,19 @@ const userSearchComponent = ({
     user
                              }) =>
 <div>
-    <div className="container-fluid text-primary">
+    <div className="container-fluid">
         <HomePageHeader/>
         {
             user !== null &&
-            <h3 className="wbdv-header-profile-name">{user.userId}'s profile</h3>
+                <div>
+                    <div>
+            <h2 className="wbdv-header-profile-name text-primary">{user.userId}'s profile</h2>
+                    </div>
+                    <div>
+                <h4 className="wbdv-margins-info">Email: {user.email}</h4>
+                        <h4>Height: {user.height} feet</h4>
+                    </div>
+                </div>
         }
         {
             user === null &&

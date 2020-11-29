@@ -9,7 +9,9 @@ import {
   onChangeEmail,
   onChangePassword,
   setUserExists,
-  setPasswordMatching
+  setPasswordMatching,
+  onChangeCurrentWeight,
+    onChangeHeight
 } from "../../actions/RegisterAction";
 import registerReducer from "../../reducers/RegisterReducer";
 import LoginComponent from "./LoginComponent";
@@ -26,7 +28,8 @@ const RegisterComponent = ({
     userIdExist,passwordMatchingFn,
     userExists, passwordMatching,
   setUserExists, setPasswordMatching,
-  onChangeUserId,onChangeEmail, onChangePassword
+  onChangeUserId,onChangeEmail, onChangePassword,
+                             weight, onChangeCurrentWeight, onChangeHeight, heightFt
 }) =>
     <div className="container">
       <HomePageHeader/>
@@ -75,12 +78,37 @@ const RegisterComponent = ({
             {!passwordMatching &&"Please confirm your password"}
           </div>
         </div>
+
+        <div className="form-group row">
+          <label htmlFor="weight" className="col-sm-2 col-form-label">
+            Current Weight</label>
+          <div className="col-sm-10">
+            <input id="weght" type="email"
+                   className="form-control"
+                   placeholder="enter weight in lbs"
+                   onChange={(event) => onChangeCurrentWeight(event.target.value)}/>
+          </div>
+        </div>
+          {console.log(weight)}
+          <div className="form-group row">
+            <label htmlFor="height" className="col-sm-2 col-form-label">
+              Height (feet)</label>
+            <div className="col-sm-10">
+              <input id="height" type="email"
+                     className="form-control"
+                     placeholder="enter height in feet"
+                     onChange={(event) => onChangeHeight(event.target.value)}/>
+            </div>
+        </div>
+
+
         <div className="form-group row">
           <label className="col-sm-2 col-form-label"></label>
           <div className="col-sm-10">
-            {!userExists && passwordMatching && <Link to="/ourfitnesspal/profile"
+            {!userExists && passwordMatching && <Link to="/ourfitnesspal/login/"
                    className="btn btn-primary btn-block"
-                   onClick={() => createUser(userId, email, password)}>Sign
+                   // onClick={() => createUser(userId, email, password)}>Sign
+                onClick={() => createUser(userId, email, password, weight, heightFt)}>Sign
               Up</Link>}
             <div className="row">
               <div className="col-6">
@@ -93,6 +121,33 @@ const RegisterComponent = ({
           </div>
         </div>
       </form>
+
+
+        {/*/!*ROHIT ADDED HERE FOR MORE INFO FROM USER FOR PROFILE PAGE*!/*/}
+        {/*<h3 className="text-primary">Tell Us About Yourself</h3>*/}
+        {/*<div className="form-group row">*/}
+        {/*  <label htmlFor="weight" className="col-sm-2 col-form-label">*/}
+        {/*    Current Weight</label>*/}
+        {/*  <div className="col-sm-10">*/}
+        {/*    <input id="weght" type="email"*/}
+        {/*           className="form-control"*/}
+        {/*           placeholder="enter weight in lbs"*/}
+        {/*           onChange={(event) => onChangeCurrentWeight(event.target.value)}/>*/}
+        {/*  </div>*/}
+        {/*  {console.log(weight)}*/}
+        {/*  /!*<div className="form-group row">*!/*/}
+        {/*  /!*  <label htmlFor="weight" className="col-sm-2 col-form-label">*!/*/}
+        {/*  /!*    Current Weight</label>*!/*/}
+        {/*  /!*  <div className="col-sm-10">*!/*/}
+        {/*  /!*    <input id="weght" type="email"*!/*/}
+        {/*  /!*           className="form-control"*!/*/}
+        {/*  /!*           placeholder="enter weight in lbs"*!/*/}
+        {/*  /!*           onChange={(event) => onChangeCurrentWeight(event.target.value)}/>*!/*/}
+        {/*  /!*  </div>*!/*/}
+        {/*</div>*/}
+
+
+
     </div>
     </div>
 const stateToPropertyMapper = (state) => ({
@@ -103,10 +158,17 @@ const stateToPropertyMapper = (state) => ({
   userExists: state.registerReducer.userExists,
   passwordMatching: state.registerReducer.passwordMatching,
 
+  // ADDED HERE FOR ADDED USER STUFF
+  weight: parseInt(state.registerReducer.weight),
+  heightFt: parseInt(state.registerReducer.heightFt)
+
 })
 
 const propertyToDispatchMapper = (dispatch) => ({
-  createUser : (userId, email, password) => createUser(dispatch, userId, email, password),
+  // createUser : (userId, email, password) => createUser(dispatch, userId, email, password),
+  //TODO: ADDED HERE TO ADD MORE INFO ABOUT THE USER
+  createUser : (userId, email, password, weight, heightFt) => createUser(dispatch, userId, email, password, weight, heightFt),
+
   onChangeUserId: (userId) => onChangeUserId(dispatch, userId),
   onChangeEmail: (email) => onChangeEmail(dispatch, email),
   onChangePassword: (password) => onChangePassword(dispatch, password),
@@ -114,5 +176,9 @@ const propertyToDispatchMapper = (dispatch) => ({
   setUserExists: (exist, userId) => {setUserExists(dispatch, exist); onChangeUserId(dispatch, userId)},
   passwordMatchingFn: (password, verifiedPassword) => password === verifiedPassword,
   setPasswordMatching: (matching, password) => {setPasswordMatching(dispatch, matching); onChangePassword(dispatch, password)},
+
+  // ADDED HERE TO ADD TO USERS PROFILE
+  onChangeCurrentWeight: (weight) => onChangeCurrentWeight(dispatch, weight),
+  onChangeHeight: (heightFt) => onChangeHeight(dispatch, heightFt)
 })
 export default connect(stateToPropertyMapper, propertyToDispatchMapper) (RegisterComponent)
