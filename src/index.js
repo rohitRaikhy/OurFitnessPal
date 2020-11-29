@@ -19,6 +19,7 @@ import resultItemReducer from "./reducers/ResultItemReducer";
 import RouterManagerComponent from "./components/HomePageComponents/RouterManagerComponent";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css"
+import profileReducer from "./reducers/ProfileReducer";
 
 const reducers = combineReducers({
   loginReducer: loginReducer,
@@ -26,6 +27,7 @@ const reducers = combineReducers({
   userReducer: userReducer,
   searchReducer: searchReducer,
   resultItemReducer: resultItemReducer,
+    profileReducer: profileReducer
 })
 const store = createStore(reducers);
 

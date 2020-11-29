@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import { Link } from "react-router-dom";
 import ProfileComponent from "./ProfileComponent";
+import "./Register.Style.css"
 import {
   createUser,
   onChangeUserId,
@@ -13,6 +14,7 @@ import {
 import registerReducer from "../../reducers/RegisterReducer";
 import LoginComponent from "./LoginComponent";
 import userReducer from "../../reducers/UserReducer";
+import HomePageHeader from "./HomePageHeader";
 
 
 const RegisterComponent = ({
@@ -27,6 +29,8 @@ const RegisterComponent = ({
   onChangeUserId,onChangeEmail, onChangePassword
 }) =>
     <div className="container">
+      <HomePageHeader/>
+      <div className="wbdv-register-page-margins">
       <h1>Register</h1>
       <form>
         <div className="form-group row">
@@ -89,6 +93,7 @@ const RegisterComponent = ({
           </div>
         </div>
       </form>
+    </div>
     </div>
 const stateToPropertyMapper = (state) => ({
   users: state.userReducer.users,

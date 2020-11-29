@@ -5,6 +5,8 @@ import ProfileComponent from "./ProfileComponent";
 import RegisterComponent from "./RegisterComponent";
 import userReducer from "../../reducers/UserReducer";
 import {verifyUser, onChangeUserId, onChangePassword} from "../../actions/LoginActions";
+import HomePageHeader from "./HomePageHeader";
+import "./Register.Style.css"
 
 
 const LoginComponent = ({
@@ -12,6 +14,8 @@ const LoginComponent = ({
     onChangeUserId, onChangePassword, verifyUser,
 }) =>
     <div className="container">
+      <HomePageHeader/>
+      <div className= "wbdv-register-page-margins ">
       <h1>Login to MyFitnessPal</h1>
       <form>
         <div className="form-group row">
@@ -37,7 +41,7 @@ const LoginComponent = ({
           <div className="col-sm-10">
             <i className="btn btn-primary btn-block"
                 onClick={() => verifyUser(users, loginUserId, loginPassword)}>Sign In</i>
-            {loginStatus && <Redirect to="/ourfitnesspal/profile" />}
+            {loginStatus && <Redirect to={`/ourfitnesspal/profile/${loginUserId}`}/>}
               {/*<Link to="/ourfitnesspal/profile" className="btn btn-primary btn-block"*/}
               {/*      onClick={() => verifyUser(users, loginUserId, loginPassword)}>Sign In</Link>*/}
             {console.log("users", " ", users)}
@@ -59,6 +63,7 @@ const LoginComponent = ({
           </div>
         </div>
       </form>
+    </div>
     </div>
 
 const stateToPropertyMapper = (state) => ({

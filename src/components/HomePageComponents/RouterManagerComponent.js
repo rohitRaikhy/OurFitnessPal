@@ -18,6 +18,8 @@ import "font-awesome/css/font-awesome.css"
 import PrivacyComponent from "../PrivacyPage/PrivacyComponent"
 import SearchComponent from "../SearchComponent";
 import ResultItemComponent from "../ResultItemComponent";
+import userSearchComponent from "./UserSearchComponent";
+import loggedInProfileComponent from "./loggedInProfileComponent";
 
 class RouterManagerComponent extends React.Component {
     // state = {
@@ -63,15 +65,35 @@ class RouterManagerComponent extends React.Component {
                     <Route path="/ourfitnesspal/register" exact>
                         <RegisterComponent/>
                     </Route>
-                    <Route path="/ourfitnesspal/profile" exact>
-                        <ProfileComponent/>
-                    </Route>
+
+
+                    <Route
+                        path={["/ourfitnesspal/profile"]}
+                        exact
+                        component={ProfileComponent}/>
+
+                    <Route
+                        path={["/ourfitnesspal/profile/:userId"]}
+                        exact
+                        component={loggedInProfileComponent}/>
+
+
+
+                    {/*<Route path="/ourfitnesspal/profile" exact>*/}
+                    {/*    <ProfileComponent/>*/}
+                    {/*</Route>*/}
                     <Route path={["/ourfitnesspal/search"]} exact >
                         <SearchComponent/>
                     </Route>
                     <Route path="/ourfitnesspal/search/:itemId" component={ResultItemComponent}/>
+                    {/*This is the anonymous user*/}
+                    <Route path="/ourfitnesspal/userProfile" component={userSearchComponent}/>
+                    {/*<Route*/}
+                    {/*    path={["/ourfitnesspal/userProfile",*/}
+                    {/*        "/ourfitnesspal/userProfile/:userId"]}*/}
+                    {/*    exact*/}
+                    {/*    component={ProfileComponent}/>*/}
                 </div>
-                ,
             </BrowserRouter>
         );
     }
@@ -80,6 +102,7 @@ class RouterManagerComponent extends React.Component {
 const stateToPropertyMapper = (state) => ({
     users: state.userReducer.users,
     loginUser: state.loginReducer.loginUser,
+    user: state.profileReducer.user
 })
 
 const propertyToDispatchMapper = (dispatch) => ({

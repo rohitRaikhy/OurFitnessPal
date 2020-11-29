@@ -8,8 +8,8 @@ import userSearchComponent from "./UserSearchComponent";
 import {BrowserRouter as Router, BrowserRouter, Route, Switch} from "react-router-dom";
 
 const ProfileComponent = ({
-    searchName, user, onChangeSearchName, findUser
-}) =>
+                              searchName, user, onChangeSearchName, findUser
+                          }) =>
     <div className="wbdv-header-profile-name">
         <HomePageHeader/>
         {/*<h4 className= "wbdv-profile-search">Enter a height: </h4>*/}
@@ -35,11 +35,11 @@ const ProfileComponent = ({
                    placeholder="Enter a profile name"
                    onChange={(event) => onChangeSearchName(event.target.value)}/>
 
-                     {/*<Route path="/ourfitnesspal/userProfile" component={userSearchComponent({user})}/>*/}
-                    <Link to={`/ourfitnesspal/userProfile/${searchName}`}>
+                {/*<Route path="/ourfitnesspal/userProfile" component={userSearchComponent({user})}/>*/}
+                <Link to={`/ourfitnesspal/userProfile/${searchName}`}>
                     <button
-                    onClick={() => findUser(searchName)}
-                    className="btn btn-primary">
+                        onClick={() => findUser(searchName)}
+                        className="btn btn-primary">
                     Search
                     </button>
                    </Link>
