@@ -20,6 +20,7 @@ import RouterManagerComponent from "./components/HomePageComponents/RouterManage
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css"
 import profileReducer from "./reducers/ProfileReducer";
+import adminReducer from "./reducers/AdminReducer";
 
 const reducers = combineReducers({
   loginReducer: loginReducer,
@@ -27,7 +28,8 @@ const reducers = combineReducers({
   userReducer: userReducer,
   searchReducer: searchReducer,
   resultItemReducer: resultItemReducer,
-    profileReducer: profileReducer
+  profileReducer: profileReducer,
+  adminReducer: adminReducer
 })
 const store = createStore(reducers);
 

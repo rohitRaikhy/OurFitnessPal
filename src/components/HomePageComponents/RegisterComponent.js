@@ -11,12 +11,15 @@ import {
   setUserExists,
   setPasswordMatching,
   onChangeCurrentWeight,
-    onChangeHeight
+  onChangeHeightFt,
+  setLocation, setGender, onChangeHeightInch, setRole
 } from "../../actions/RegisterAction";
 import registerReducer from "../../reducers/RegisterReducer";
 import LoginComponent from "./LoginComponent";
 import userReducer from "../../reducers/UserReducer";
+import adminReducer from "../../reducers/AdminReducer";
 import HomePageHeader from "./HomePageHeader";
+import USStateDropDown from "./USStateDropDownComponent";
 
 
 const RegisterComponent = ({
@@ -29,7 +32,8 @@ const RegisterComponent = ({
     userExists, passwordMatching,
   setUserExists, setPasswordMatching,
   onChangeUserId,onChangeEmail, onChangePassword,
-                             weight, onChangeCurrentWeight, onChangeHeight, heightFt
+  weight, onChangeCurrentWeight, onChangeHeightFt, heightFt,
+  setGender, gender, location, onChangeHeightInch, heightInch, roles, setRole, role
 }) =>
     <div className="container">
       <HomePageHeader/>
@@ -78,12 +82,37 @@ const RegisterComponent = ({
             {!passwordMatching &&"Please confirm your password"}
           </div>
         </div>
+        <USStateDropDown />
+        <div className="form-group row">
+          <label htmlFor="gender" className="col-sm-2 col-form-label">
+            Gender </label>
+          <div className="col-sm-2">
+            <input id="gender" name="gender" type="radio" onClick={() => setGender("male")}/> Male
+          </div>
+          <div className="col-sm-2">
+            <input id="gender" name="gender" type="radio" onClick={() => setGender("female")}/> Female
+          </div>
+        </div>
+
+        <div className="form-group row">
+          <label htmlFor="gender" className="col-sm-2 col-form-label">
+            Role </label>
+          <div className="col-sm-10">
+            <select className="form-control" id="role" onChange={(event) => setRole(event.target.value)}>
+              <option value="">Choose One</option>
+              {roles.map( role =>
+              <option value={role}>{role}</option>
+              )}
+            </select>
+          </div>
+
+        </div>
 
         <div className="form-group row">
           <label htmlFor="weight" className="col-sm-2 col-form-label">
             Current Weight</label>
           <div className="col-sm-10">
-            <input id="weght" type="email"
+            <input id="weight"
                    className="form-control"
                    placeholder="enter weight in lbs"
                    onChange={(event) => onChangeCurrentWeight(event.target.value)}/>
@@ -92,15 +121,21 @@ const RegisterComponent = ({
           {console.log(weight)}
           <div className="form-group row">
             <label htmlFor="height" className="col-sm-2 col-form-label">
-              Height (feet)</label>
-            <div className="col-sm-10">
-              <input id="height" type="email"
+              Height</label>
+            <div className="col-sm-3">
+              <input id="heightFt"
                      className="form-control"
                      placeholder="enter height in feet"
-                     onChange={(event) => onChangeHeight(event.target.value)}/>
+                     onChange={(event) => onChangeHeightFt(event.target.value)}/>
             </div>
+            Ft
+            <div className="col-sm-3">
+              <input id="heightInch"
+                     className="form-control"
+                     placeholder="enter height in inches"
+                     onChange={(event) => onChangeHeightInch(event.target.value)}/>
+            </div>Inches
         </div>
-
 
         <div className="form-group row">
           <label className="col-sm-2 col-form-label"></label>
@@ -108,7 +143,7 @@ const RegisterComponent = ({
             {!userExists && passwordMatching && <Link to="/ourfitnesspal/login/"
                    className="btn btn-primary btn-block"
                    // onClick={() => createUser(userId, email, password)}>Sign
-                onClick={() => createUser(userId, email, password, weight, heightFt)}>Sign
+                onClick={() => createUser(userId, email, password, weight, heightFt, heightInch, location, gender, role)}>Sign
               Up</Link>}
             <div className="row">
               <div className="col-6">
@@ -160,14 +195,19 @@ const stateToPropertyMapper = (state) => ({
 
   // ADDED HERE FOR ADDED USER STUFF
   weight: parseInt(state.registerReducer.weight),
-  heightFt: parseInt(state.registerReducer.heightFt)
-
+  heightFt: parseInt(state.registerReducer.heightFt),
+  heightInch: parseInt(state.registerReducer.heightInch),
+  gender: state.registerReducer.gender,
+  location:state.registerReducer.location,
+  roles: state.adminReducer.roles,
+  role: state.registerReducer.role,
 })
 
 const propertyToDispatchMapper = (dispatch) => ({
   // createUser : (userId, email, password) => createUser(dispatch, userId, email, password),
   //TODO: ADDED HERE TO ADD MORE INFO ABOUT THE USER
-  createUser : (userId, email, password, weight, heightFt) => createUser(dispatch, userId, email, password, weight, heightFt),
+  createUser : (userId, email, password, weight, heightFt, heightInch, location, gender, role) =>
+      createUser(dispatch, userId, email, password, weight, heightFt, heightInch, location, gender, role),
 
   onChangeUserId: (userId) => onChangeUserId(dispatch, userId),
   onChangeEmail: (email) => onChangeEmail(dispatch, email),
@@ -179,6 +219,9 @@ const propertyToDispatchMapper = (dispatch) => ({
 
   // ADDED HERE TO ADD TO USERS PROFILE
   onChangeCurrentWeight: (weight) => onChangeCurrentWeight(dispatch, weight),
-  onChangeHeight: (heightFt) => onChangeHeight(dispatch, heightFt)
+  onChangeHeightFt: (heightFt) => onChangeHeightFt(dispatch, heightFt),
+  onChangeHeightInch: (heightInch) => onChangeHeightInch(dispatch, heightInch),
+  setGender: (gender) => setGender(dispatch, gender),
+  setRole: (role) => setRole(dispatch, role),
 })
 export default connect(stateToPropertyMapper, propertyToDispatchMapper) (RegisterComponent)

@@ -9,13 +9,17 @@ import userService from "../services/UserService";
 //   }
 
 //TODO: ADDED HERE TO ADD MORE INFO ABOUT USER
-export const createUser = (dispatch, userId, email, password, weight, heightFt) => {
+export const createUser = (dispatch, userId, email, password, weight, heightFt, heightInch, location, gender, role) => {
   let newUser = {
     userId: userId,
     email: email,
     password: password,
     weight: weight,
-    heightFt: heightFt
+    heightFt: heightFt,
+    heightInch: heightInch,
+    location: location,
+    gender: gender,
+    role: role,
   }
   userService.createUser(newUser).then(newUser => {
     console.log(JSON.stringify(newUser))
@@ -48,5 +52,19 @@ export const onChangePassword = (dispatch, password) =>
 export const onChangeCurrentWeight = (dispatch, weight) =>
     dispatch({type:"ONCHANGE_CURRENT_WEIGHT", weight})
 
-export const onChangeHeight = (dispatch, heightFt) =>
-    dispatch({type:"ONCHANGE_HEIGHT", heightFt})
+export const onChangeHeightFt = (dispatch, heightFt) =>
+    dispatch({type:"ONCHANGE_HEIGHT_FT", heightFt})
+
+export const onChangeHeightInch = (dispatch, heightInch) =>
+    dispatch({type:"ONCHANGE_HEIGHT_INCH", heightInch})
+
+export const setLocation = (dispatch, state) =>
+    dispatch({type: "SET_LOCATION", state})
+
+export const setGender = (dispatch, gender) =>
+    dispatch({type: "SET_GENDER", gender})
+
+export const setRole = (dispatch, role) =>
+    dispatch({type: "SET_ROLE", role})
+
+
