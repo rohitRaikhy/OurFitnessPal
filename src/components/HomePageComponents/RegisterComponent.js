@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import { Link } from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import ProfileComponent from "./ProfileComponent";
 import "./Register.Style.css"
 import {
@@ -21,7 +21,6 @@ import adminReducer from "../../reducers/AdminReducer";
 import HomePageHeader from "./HomePageHeader";
 import USStateDropDown from "./USStateDropDownComponent";
 
-
 const RegisterComponent = ({
     users,
     userId,
@@ -33,7 +32,7 @@ const RegisterComponent = ({
   setUserExists, setPasswordMatching,
   onChangeUserId,onChangeEmail, onChangePassword,
   weight, onChangeCurrentWeight, onChangeHeightFt, heightFt,
-  setGender, gender, location, onChangeHeightInch, heightInch, roles, setRole, role
+  setGender, gender, location, onChangeHeightInch, heightInch, roles, setRole, role,
 }) =>
     <div className="container">
       <HomePageHeader/>
@@ -105,9 +104,7 @@ const RegisterComponent = ({
               )}
             </select>
           </div>
-
         </div>
-
         <div className="form-group row">
           <label htmlFor="weight" className="col-sm-2 col-form-label">
             Current Weight</label>
@@ -118,7 +115,6 @@ const RegisterComponent = ({
                    onChange={(event) => onChangeCurrentWeight(event.target.value)}/>
           </div>
         </div>
-          {console.log(weight)}
           <div className="form-group row">
             <label htmlFor="height" className="col-sm-2 col-form-label">
               Height</label>
@@ -140,11 +136,8 @@ const RegisterComponent = ({
         <div className="form-group row">
           <label className="col-sm-2 col-form-label"></label>
           <div className="col-sm-10">
-            {!userExists && passwordMatching && <Link to="/ourfitnesspal/login/"
-                   className="btn btn-primary btn-block"
-                   // onClick={() => createUser(userId, email, password)}>Sign
-                onClick={() => createUser(userId, email, password, weight, heightFt, heightInch, location, gender, role)}>Sign
-              Up</Link>}
+            {<Link to={!userExists && passwordMatching ? "/ourfitnesspal/login" : "/ourfitnesspal/register"} className="btn btn-primary btn-block"
+                onClick={() => {!userExists && passwordMatching && createUser(userId, email, password, weight, heightFt, heightInch, location, gender, role)}}> Sign Up </Link>}
             <div className="row">
               <div className="col-6">
                   <Link to="/ourfitnesspal/login">Login</Link>

@@ -1,4 +1,5 @@
 import registerService from "../services/RegisterService"
+import {useHistory} from "react-router";
 const initialState = {
   userId:"",
   password:"",
@@ -26,14 +27,6 @@ const registerReducer = (state=initialState, action) => {
         ...state,
         userExists: action.exist
       }
-    // case "CREATE_USER":
-    //   return {
-    //     ...state,
-    //     userExists: false,
-    //     userId:"",
-    //     password: "",
-    //     email: "",
-    //   }
           //TOOD: ADDED HERE TO ADD MORE STUFF ABOUT THE USER
     case "CREATE_USER":
       return {

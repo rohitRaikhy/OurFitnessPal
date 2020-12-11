@@ -1,5 +1,7 @@
 import registerService from "../services/RegisterService";
 import userService from "../services/UserService";
+import {useHistory} from "react-router";
+
 
 // export const createUser = (dispatch, userId, email, password) => {
 //   let newUser = {
@@ -10,6 +12,8 @@ import userService from "../services/UserService";
 
 //TODO: ADDED HERE TO ADD MORE INFO ABOUT USER
 export const createUser = (dispatch, userId, email, password, weight, heightFt, heightInch, location, gender, role) => {
+  let notNull = userId != null && email != null && password != null && weight != null && heightFt != null &&
+      heightInch != null &&  location != null && gender != null && role != null;
   let newUser = {
     userId: userId,
     email: email,
@@ -21,9 +25,10 @@ export const createUser = (dispatch, userId, email, password, weight, heightFt, 
     gender: gender,
     role: role,
   }
-  userService.createUser(newUser).then(newUser => {
-    console.log(JSON.stringify(newUser))
-    dispatch({type:"CREATE_USER", newUser})})}
+  notNull && userService.createUser(newUser).then(newUser => {
+    dispatch({type:"CREATE_USER", newUser});
+
+  })}
 
 export const findAllUsers = (dispatch) =>{
   registerService.findAllUsers().then(users => {

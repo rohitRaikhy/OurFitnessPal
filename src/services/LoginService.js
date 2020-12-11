@@ -6,7 +6,24 @@ const findAllUsers = () =>
 const findUserByUserId = (userId) =>
     fetch(`${USER_URL}/${userId}`).then(response => response.json())
 
+const logout = () =>
+    fetch(`http://localhost:8080/ourfitnesspal/logout`, {
+      method: 'POST',
+      credentials: "include"
+    })
+
+const login = (userId) =>
+  // console.log(userId);
+  fetch(`http://localhost:8080/ourfitnesspal/login/${userId}`, {
+    method: 'POST',
+    credentials: "include"
+  }).then(response => response.json())
+
+
+
+
 export default {
   findAllUsers,
-  findUserByUserId
+  findUserByUserId,
+  logout, login
 }
