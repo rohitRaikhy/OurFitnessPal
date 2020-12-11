@@ -1,17 +1,14 @@
 import React from "react";
 import {connect} from "react-redux";
 import  { Redirect, BrowserRouter, Link, Route } from "react-router-dom";
-import ProfileComponent from "./ProfileComponent";
-import RegisterComponent from "./RegisterComponent";
-import userReducer from "../../reducers/UserReducer";
-import {verifyUser, onChangeUserId, onChangePassword} from "../../actions/LoginActions";
+import {verifyUser, onChangeUserId, onChangePassword, login} from "../../actions/LoginActions";
 import HomePageHeader from "./HomePageHeader";
 import "./Register.Style.css"
 
 
 const LoginComponent = ({
     users, loginUserId, loginPassword,loginStatus,loginUser,
-    onChangeUserId, onChangePassword, verifyUser,
+    onChangeUserId, onChangePassword, verifyUser, login
 }) =>
     <div className="container">
       <HomePageHeader/>
@@ -39,11 +36,8 @@ const LoginComponent = ({
         <div className="form-group row">
           <label className="col-sm-2 col-form-label"></label>
           <div className="col-sm-10">
-            <i className="btn btn-primary btn-block"
-                onClick={() => verifyUser(users, loginUserId, loginPassword)}>Sign In</i>
-            {loginStatus && <Redirect to={`/ourfitnesspal/profile/${loginUserId}`}/>}
-              {/*<Link to="/ourfitnesspal/profile" className="btn btn-primary btn-block"*/}
-              {/*      onClick={() => verifyUser(users, loginUserId, loginPassword)}>Sign In</Link>*/}
+            <Link to={loginStatus ? `/ourfitnesspal/profile/${loginUserId}`: "/ourfitnesspal/login"} className="btn btn-primary btn-block"
+                onClick={() => {verifyUser(users, loginUserId, loginPassword); login(loginUserId)}}>Sign In</Link>
             {console.log("users", " ", users)}
             {console.log("loginUserID", " ", loginUserId)}
             {console.log("login password", " ", loginPassword)}
@@ -54,10 +48,7 @@ const LoginComponent = ({
                 <a href="#">Forgot Password?</a>
               </div>
               <div className="col-6">
-                {/*<BrowserRouter>*/}
                   <Link to="/ourfitnesspal/register" className="float-right">Sign Up</Link>
-                {/*  <Route path="/myfitnesspal/register" component={RegisterComponent}/>*/}
-                {/*</BrowserRouter>*/}
               </div>
             </div>
           </div>
@@ -78,6 +69,7 @@ const propertyToDispatchMapper = (dispatch) => ({
   verifyUser: (users,userId, password) => verifyUser(dispatch, users, userId, password),
   onChangeUserId: (userId) => onChangeUserId(dispatch, userId),
   onChangePassword: (password) => onChangePassword(dispatch, password),
+  login: (userId) => login(dispatch, userId)
 })
 
 

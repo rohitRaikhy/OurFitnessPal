@@ -1,8 +1,8 @@
 import React from "react"
 import "./HomePage.Style.css"
 import {Link, NavLink} from "react-router-dom";
-
-const homePageHeading = () =>
+import loginService from "../../services/LoginService";
+const homePageHeading = (history) =>
     <div className="container">
         <div className="container-fluid">
 
@@ -63,9 +63,16 @@ const homePageHeading = () =>
                                     className="sr-only">
                         (current)</span>Search Food</NavLink>
                             </li>
+                            <li className="nav-item nav-link">
+                                <NavLink
+                                    className = "wbdv-link"
+                                    to="/ourfitnesspal/admin"><span
+                                    className="sr-only">
+                        (current)</span>Admin</NavLink>
+                            </li>
                         </ul>
-
                     </div>
+                    <Link to="/ourfitnesspal" className={"btn btn-danger"} onClick={() => loginService.logout()}>LOGOUT</Link>
                 </nav>
 
             </div>

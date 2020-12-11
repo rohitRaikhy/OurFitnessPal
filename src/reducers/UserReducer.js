@@ -20,6 +20,11 @@ const UserReducer =(state=initialState, action) => {
         ...state,
         users: [...state.users, action.newUser],
       }
+    case "DELETE_USER":
+      return {
+        ...state,
+        users: state.users.filter(u => u.id !== action.userId)
+      }
     default:
       return state
   }

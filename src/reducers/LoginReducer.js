@@ -13,21 +13,15 @@ const loginReducer = (state=initialState, action) => {
       let verified = action.users.find(user => user.userId === action.userId && user.password === action.password);
       {console.log(JSON.stringify(verified))}
       {verified !== undefined ? state.loginStatus=true : state.loginStatus=false}
-
-
-      // {user.userId === action.userId && user.password === action.password}
-      // {console.log(user, " ", user.userId, " ", user.password)})
-      // {if (user.userId === action.userId && user.password === action.password) {
-      //   console.log(action.userId, " ", action.password)
         return {
           ...state,
           loginUser: state.loginStatus ? verified : null
         }
-    case "SET_LOGIN_USER":
-      return {
-        ...state,
-        loginUser: action.user,
-      }
+    // case "SET_LOGIN_USER":
+    //   return {
+    //     ...state,
+    //     loginUser: action.user,
+    //   }
     case "ONCHANGE_USERID":
       return {
         ...state,
