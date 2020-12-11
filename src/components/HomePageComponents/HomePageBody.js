@@ -5,6 +5,7 @@ import SearchBar from "./SearchBar";
 import HomePageHeader from "./HomePageHeader";
 import "./Cards.css"
 import HomePageCardItems from "./HomePageCardItems";
+import {NavLink} from "react-router-dom";
 
 const HomePageBody = () =>
     <div>
@@ -24,15 +25,24 @@ const HomePageBody = () =>
            {/*//TODO: Link this to the register page*/}
            <button
                className="btn btn-primary btn btn-outline-light wbdv-btn-mobile">
-               Get Started
+               <NavLink
+                   className = "wbdv-link"
+                   to="/ourfitnesspal/register"><span
+                   className="sr-only">
+                        (current)</span>Get Started</NavLink>
            </button>
 
            {/*I NEED TO CHANGE THIS TO LINK LATER*/}
            <span className="pull-left">
                <h5>Already have an account?</h5>
-          <a href="#">
-              <h3>Login</h3>
-          </a>
+          {/*<a href="#">*/}
+          {/*    <h3>Login</h3>*/}
+          {/*</a>*/}
+               <NavLink
+                   className = "wbdv-link active text-primary"
+                   to="/ourfitnesspal/login"><span
+                   className="sr-only">
+                        (current)</span><h3>Login</h3></NavLink>
            </span>
        </div>
         </div>

@@ -7,12 +7,16 @@ import {
 
 import searchReducer from "../reducers/SearchReducer";
 import ResultItemComponent from "./ResultItemComponent";
+import HomePageHeader from "./HomePageComponents/HomePageHeader";
+import "../components/HomePageComponents/Register.Style.css"
 
 const SearchComponent = ({
   itemName, results,
   onChangeItemName,searchItem,
 }) =>
     <div className="container">
+        <HomePageHeader/>
+        <div className="wbdv-register-page-margins">
       <h1>Search Food Nutrition</h1>
       <form>
         <div className="form-group row">
@@ -54,6 +58,8 @@ const SearchComponent = ({
       </table>
       {/*{results.map((result) => <li>{result.fdcId} {result.description} {result.ingredients}</li>)}*/}
     </div>
+    </div>
+
 
 const stateToPropertyMapper = (state) => ({
   itemName: state.searchReducer.itemName,

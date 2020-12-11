@@ -15,7 +15,11 @@ const homePageHeading = (history) =>
                              loading="lazy"/>
                     </a>
 
-                    <a className="navbar-brand wbdv-label wbdv-course-manager" href="#">Our Fitness Pal</a>
+                    {/*<a className="navbar-brand wbdv-label wbdv-course-manager" href="#">Our Fitness Pal</a>*/}
+                    <NavLink className = "wbdv-link navbar-brand wbdv-label wbdv-course-manager"
+                             to="/ourfitnesspal"><span
+                        className="sr-only">
+                        (current)</span>Our Fitness Pal</NavLink>
 
                     <div className="collapse navbar-collapse wbdv-button wbdv-list-layout wbdv-padding" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">

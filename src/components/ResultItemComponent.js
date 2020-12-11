@@ -8,6 +8,9 @@ import React from "react";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import resultItemReducer from "../reducers/ResultItemReducer";
+import HomePage from "./HomePageComponents/HomePage";
+import HomePageHeader from "./HomePageComponents/HomePageHeader";
+import "../components/HomePageComponents/ResultItem.css"
 
 
 const resultItemComponent = ({
@@ -15,6 +18,8 @@ const resultItemComponent = ({
   originalName, possibleUnits, possibleUnit, aisle, categoryPath, image,
   getInformationItem,setUpdated, updated}) =>
     <div>
+        <HomePageHeader/>
+    <div className="wbdv-results-page-margins">
       {updated && getInformationItem(itemId)}
       {console.log("uppdatedParams", updatedParams)}
       {updatedParams && getInformationItemWithParams(itemId, amount, possibleUnit)}
@@ -46,6 +51,7 @@ const resultItemComponent = ({
         {/*</div>*/}
       </div>
       <div className="form-group row">
+        {/*//TODO: ADDING HEADER HERE FOR NAVIGATION*/}
         <div className="col-sm-4">
           <img src={`https://spoonacular.com/cdn/ingredients_250x250/${image}`}/>
         </div>
@@ -76,6 +82,7 @@ const resultItemComponent = ({
           </table>
         </div>
       </div>
+    </div>
     </div>
 
 
