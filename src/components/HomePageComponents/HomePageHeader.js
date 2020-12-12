@@ -17,7 +17,7 @@ const homePageHeading = (history) =>
 
                     {/*<a className="navbar-brand wbdv-label wbdv-course-manager" href="#">Our Fitness Pal</a>*/}
                     <NavLink className = "wbdv-link navbar-brand wbdv-label wbdv-course-manager"
-                             to="/ourfitnesspal"><span
+                             to="/ourfitnesspal/home"><span
                         className="sr-only">
                         (current)</span>Our Fitness Pal</NavLink>
 
@@ -78,7 +78,7 @@ const homePageHeading = (history) =>
                         {/*    </li>*/}
                         </ul>
                     </div>
-                    <Link to="/ourfitnesspal" className={"btn btn-danger"} onClick={() => loginService.logout()}>LOGOUT</Link>
+                    <Link to="/ourfitnesspal/home" className={"btn btn-danger"} onClick={() => loginService.logout()}>LOGOUT</Link>
                 </nav>
 
             </div>

@@ -23,13 +23,13 @@ const PrivacyComponent = () =>
             Additionally, it reminds them that remaining on the website means that they are comfortable with the uses of their data. Simply put, it is a document that describes in detail what personal information your website collects from its visitors, along with how you store it and use it.</p>
     </div>
         <span className="align-content-center">
-            <Link to={"/ourfitnesspal"}>
+            <Link to={"/ourfitnesspal/home"}>
         <button
             className="btn btn-primary">
             Accept
         </button>
                  </Link>
-            <Link to={"/ourfitnesspal"}>
+            <Link to={"/ourfitnesspal/home"}>
         <button className="btn btn-danger">
             Reject
         </button>
