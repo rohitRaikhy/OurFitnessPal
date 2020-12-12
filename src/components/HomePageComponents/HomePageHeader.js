@@ -67,13 +67,15 @@ const homePageHeading = (history) =>
                                     className="sr-only">
                         (current)</span>Search Food</NavLink>
                             </li>
-                            <li className="nav-item nav-link">
-                                <NavLink
-                                    className = "wbdv-link"
-                                    to="/ourfitnesspal/admin"><span
-                                    className="sr-only">
-                        (current)</span>Admin</NavLink>
-                            </li>
+
+                            {/*//TODO: REMOVED ADMIN FROM HEADER BY GUIDANCE OF TA*/}
+                        {/*    <li className="nav-item nav-link">*/}
+                        {/*        <NavLink*/}
+                        {/*            className = "wbdv-link"*/}
+                        {/*            to="/ourfitnesspal/admin"><span*/}
+                        {/*            className="sr-only">*/}
+                        {/*(current)</span>Admin</NavLink>*/}
+                        {/*    </li>*/}
                         </ul>
                     </div>
                     <Link to="/ourfitnesspal" className={"btn btn-danger"} onClick={() => loginService.logout()}>LOGOUT</Link>
