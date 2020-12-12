@@ -1,10 +1,11 @@
 import React from "react";
 import {connect} from "react-redux";
 import { Link } from "react-router-dom";
-import {
-  onChangeItemName, searchItem,
-} from "../actions/SearchAction";
+// import {
+//   onChangeItemName, searchItem
+// } from "../actions/SearchAction";
 
+import {onChangeItemName, searchItem} from "../actions/SearchAction";
 import searchReducer from "../reducers/SearchReducer";
 import ResultItemComponent from "./ResultItemComponent";
 import HomePageHeader from "./HomePageComponents/HomePageHeader";
@@ -27,7 +28,13 @@ const SearchComponent = ({
                    className="form-control"
                    placeholder="Cheddar Cheese"
                    onChange={(event) => onChangeItemName(event.target.value)}/>
+
           </div>
+            {/*<button*/}
+            {/*    onClick={() => searchByTitle(itemName)}*/}
+            {/*    className="btn btn-primary">*/}
+            {/*    Search*/}
+            {/*</button>*/}
           {/*<div className="col-sm-2">*/}
           {/*  <button className="btn btn-primary btn-block"*/}
           {/*          onClick={() => this.searchItem(this.state.itemName)}>Search</button>*/}
@@ -48,7 +55,7 @@ const SearchComponent = ({
             <tr>
               <td>{result.id}</td>
               <td>
-                <Link to={`/ourfitnesspal/search/${result.id}`}>
+                <Link to={`/ourfitnesspal/search/details/${result.id}`}>
                   {result.name}
                 </Link>
               </td>
@@ -68,6 +75,8 @@ const stateToPropertyMapper = (state) => ({
 const propertyToDispatchMapper = (dispatch) => ({
   onChangeItemName : (itemName) => {onChangeItemName(dispatch, itemName); searchItem(dispatch, itemName)},
   searchItem : (itemName) => searchItem(dispatch, itemName),
+    //TODO: ADDED HERE
+    // searchByTitle: (itemName) => searchByTitle(dispatch, itemName)
 })
 
 export default connect(stateToPropertyMapper, propertyToDispatchMapper) (SearchComponent)

@@ -21,6 +21,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css"
 import profileReducer from "./reducers/ProfileReducer";
 import adminReducer from "./reducers/AdminReducer";
+import recipeReducer from "./reducers/RecipeReducer";
 
 const reducers = combineReducers({
   loginReducer: loginReducer,
@@ -29,7 +30,8 @@ const reducers = combineReducers({
   searchReducer: searchReducer,
   resultItemReducer: resultItemReducer,
   profileReducer: profileReducer,
-  adminReducer: adminReducer
+  adminReducer: adminReducer,
+    recipeReducer: recipeReducer
 })
 const store = createStore(reducers);
 

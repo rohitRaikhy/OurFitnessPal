@@ -25,6 +25,7 @@ import loggedInProfileComponent from "./loggedInProfileComponent";
 import AdminPageComponent from "./AdminPageComponent";
 import { profile } from "../../services/UserService";
 
+
 class RouterManagerComponent extends React.Component {
     // state = {
     //   users: [],
@@ -73,11 +74,12 @@ class RouterManagerComponent extends React.Component {
         return (
             // <HomePageHeader/>
             <BrowserRouter>
+                <Switch>
                 <div>
                     <Route path="/" exact>
                         <PrivacyComponent/>
                     </Route>
-                    <Route path="/ourfitnesspal" exact>
+                    <Route path={["/ourfitnesspal/home", "/ourfitnesspal/home/:keyword"]} exact>
                         <HomePageBody/>
                     </Route>
                     <Route path="/ourfitnesspal/login" exact>
@@ -98,10 +100,15 @@ class RouterManagerComponent extends React.Component {
                     {/*<Route path="/ourfitnesspal/profile" exact>*/}
                     {/*    <ProfileComponent/>*/}
                     {/*</Route>*/}
+
+                    {/*//TODO: CHANGED TO MAINTAIN STATE WHEN REFRESHING*/}
+                    {/*<Route path={["/ourfitnesspal/search"]} exact >*/}
+                    {/*    <SearchComponent/>*/}
+                    {/*</Route>*/}
                     <Route path={["/ourfitnesspal/search"]} exact >
                         <SearchComponent/>
                     </Route>
-                    <Route path="/ourfitnesspal/search/:itemId" component={ResultItemComponent}/>
+                    <Route path="/ourfitnesspal/search/details/:itemId" component={ResultItemComponent}/>
                     {/*This is the anonymous user*/}
                     <Route path="/ourfitnesspal/userProfile" component={userSearchComponent}/>
                     {/*<Route*/}
@@ -113,6 +120,7 @@ class RouterManagerComponent extends React.Component {
                         <AdminPageComponent/>
                     </Route>
                 </div>
+                    </Switch>
             </BrowserRouter>
         );
     }
@@ -121,7 +129,7 @@ class RouterManagerComponent extends React.Component {
 const stateToPropertyMapper = (state) => ({
     users: state.userReducer.users,
     loginUser: state.loginReducer.loginUser,
-    user: state.profileReducer.user
+    user: state.profileReducer.user,
 })
 
 const propertyToDispatchMapper = (dispatch) => ({
