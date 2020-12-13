@@ -105,10 +105,18 @@ class RouterManagerComponent extends React.Component {
                     {/*<Route path={["/ourfitnesspal/search"]} exact >*/}
                     {/*    <SearchComponent/>*/}
                     {/*</Route>*/}
-                    <Route path={["/ourfitnesspal/search"]} exact >
+                    <Route path={["/ourfitnesspal/search/","/ourfitnesspal/search/:itemName" ]} exact >
                         <SearchComponent/>
                     </Route>
-                    <Route path="/ourfitnesspal/search/details/:itemId" component={ResultItemComponent}/>
+
+                    <Route path={["/ourfitnesspal/search/details/:itemId",
+                        "/ourfitnesspal/search/details/:itemId/amount/:amount/units/:possibleUnit"]} exact >
+                           <ResultItemComponent/>
+                    </Route>
+
+
+                    {/*<Route path={["/ourfitnesspal/search/details/:itemId"]}*/}
+                    {/*       component={ResultItemComponent} />*/}
                     {/*This is the anonymous user*/}
                     <Route path="/ourfitnesspal/userProfile" component={userSearchComponent}/>
                     {/*<Route*/}
