@@ -37,7 +37,8 @@ class resultItemComponent extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    if(prevProps.match.params.amount !== this.props.match.params.amount) {
+    if(prevProps.match.params.amount !== this.props.match.params.amount ||
+        prevProps.match.params.possibleUnit !== this.props.match.params.possibleUnit) {
       console.log("URL params for mount updated version:", this.props.match.params.amount)
       this.setState({
         amount: this.props.match.params.amount,

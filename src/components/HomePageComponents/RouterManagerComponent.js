@@ -110,7 +110,8 @@ class RouterManagerComponent extends React.Component {
                     </Route>
 
                     <Route path={["/ourfitnesspal/search/details/:itemId",
-                        "/ourfitnesspal/search/details/:itemId/amount/:amount/units/:possibleUnit"]} exact >
+                        "/ourfitnesspal/search/details/:itemId/amount/:amount/units/:possibleUnit",
+                        "/ourfitnesspal/search/details/:itemId/amount/:amount/units/"]} exact >
                            <ResultItemComponent/>
                     </Route>
 
