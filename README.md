@@ -18,8 +18,8 @@ our client is based on React and the server is java server.
 - search: https://cs5610-ourfitnesspal.herokuapp.com/ourfitnesspal/search
 
 ##### Roles
-Role1: (Dieter) berlin /berlin
-Role2: (Healthy eater) paris/paris
-Role3: (Gym Addict) moscow/moscow
-Admin: (Admin) rome/rome
+- Role1: (Dieter) berlin /berlin
+- Role2: (Healthy eater) paris/paris
+- Role3: (Gym Addict) moscow/moscow
+- Admin: (Admin) rome/rome
 
