@@ -1,4 +1,4 @@
-#OurFitnessPal: CS5610 WebDev project 
+# OurFitnessPal: CS5610 WebDev project 
 ## Team 26 : Ye Jee Lee, Rohit, Raikhy
 
 description:  https://docs.google.com/document/d/14K1bA-clePCBSRgyJoTXUxL2AFst2OrhzSGEM3SYTzI/edit 
