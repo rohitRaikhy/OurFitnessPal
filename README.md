@@ -16,6 +16,7 @@ our client is based on React and the server is java server.
 - register: https://cs5610-ourfitnesspal.herokuapp.com/ourfitnesspal/register
 - login: https://cs5610-ourfitnesspal.herokuapp.com/ourfitnesspal/login
 - search: https://cs5610-ourfitnesspal.herokuapp.com/ourfitnesspal/search
+- admin: https://cs5610-ourfitnesspal.herokuapp.com/ourfitnesspal/admin
 
 ##### Roles
 - Role1: (Dieter) berlin /berlin
