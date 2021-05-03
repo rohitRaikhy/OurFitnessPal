@@ -13,7 +13,6 @@ import HomePageHeader from "./HomePageComponents/HomePageHeader";
 import "../components/HomePageComponents/ResultItem.css"
 
 class resultItemComponent extends React.Component {
-
   state = {
     itemName: "",
     amount: 0,
@@ -21,7 +20,6 @@ class resultItemComponent extends React.Component {
     itemId: "",
     updatedParams: false
   }
-
 
   componentDidMount() {
     console.log("URL params for mount:", this.props.match.params.itemId)
@@ -50,14 +48,9 @@ class resultItemComponent extends React.Component {
     }
   }
 
-
   searchByTitle = (itemId, amount, possibleUnit) => {
-    // this.props.history.push(`/ourfitnesspal/home/${this.props.keyword}`)
-    // {console.log("these are the props", this.props.history)}
     this.props.history.push(`/ourfitnesspal/search/details/${itemId}/amount/${amount}/units/${possibleUnit}`)
-    // history.push(`/ourfitnesspal/home/${keyword}`)
   }
-
 
   render() {
     return(
@@ -94,7 +87,6 @@ class resultItemComponent extends React.Component {
         </div>
       </div>
       <div className="form-group row">
-        {/*//TODO: ADDING HEADER HERE FOR NAVIGATION*/}
         <div className="col-sm-4">
           <img src={`https://spoonacular.com/cdn/ingredients_250x250/${this.props.image}`}/>
         </div>
@@ -156,133 +148,3 @@ const propertyToDispatchMapper = (dispatch) => ({
 
 export default withRouter(connect(stateToPropertyMapper, propertyToDispatchMapper) (resultItemComponent))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//TODO: TRYING TO REFRACTOR THIS CODE FROM BEFORE THAT WORKED TO HAVE STATE TO KEEP WHEN RERESH
-
-// const resultItemComponent = ({
-//   itemId,onChangeAmount, amount,updatePossibleUnit,updatedParams, nutrients,getInformationItemWithParams,setUpdateParams,
-//   originalName, possibleUnits, possibleUnit, aisle, categoryPath, image,
-//   getInformationItem,setUpdated, updated}) =>
-//     <div>
-//         <HomePageHeader/>
-//     <div className="wbdv-results-page-margins">
-//       {updated && getInformationItem(itemId)}
-//       {console.log("uppdatedParams", updatedParams)}
-//       {updatedParams && getInformationItemWithParams(itemId, amount, possibleUnit)}
-//       <h2>{originalName}</h2>
-//       <div className="form-group row wbdv-margin-header">
-//         Amount
-//         <div className="col-sm-4">
-//           <input id="amountFld"
-//                  className="form-control"
-//                  placeholder="1"
-//                  onChange={(event) => onChangeAmount(event.target.value)}/>
-//         </div>
-//         Unit
-//         <div className="col-sm-4">
-//           {console.log("possible Unit", possibleUnit)}
-//           <select value={possibleUnit !== '' ? possibleUnit : "chooseOne"} id="unitSelect" className="browser-default custom-select"
-//                   onChange={(event) => updatePossibleUnit(event.target.value)}>
-//             <option value="chooseOne" disabled>choose one</option>
-//             {possibleUnits.map((unit) =>
-//             document.getElementById("unitSelect").value === possibleUnit ?
-//                 <option value={unit.toString()} selected>{unit}</option> : <option value={unit.toString()}>{unit}</option>
-//             )}
-//           </select>
-//         </div>
-//         {/*<div className="col-sm-2">*/}
-//         {/*  <button className={"btn btn-block btn-primary"}*/}
-//         {/*          onClick={() => setUpdateParams(true)}>lookUp</button>*/}
-//         {/*</div>*/}
-//       </div>
-//       <div className="form-group row">
-//         {/*//TODO: ADDING HEADER HERE FOR NAVIGATION*/}
-//         <div className="col-sm-4">
-//           <img src={`https://spoonacular.com/cdn/ingredients_250x250/${image}`}/>
-//         </div>
-//         <div className="col-sm-8">
-//           {
-//                 <div>
-//             Amount : {amount}   Possible Unit: {possibleUnit}
-//                 </div>
-//           }
-//
-//           <table className="table">
-//             <thead>
-//             <tr>
-//               <th scope="col">title</th>
-//               <th scope="col">amount</th>
-//               <th scope="col">unit</th>
-//             </tr>
-//             </thead>
-//             <tbody>
-//               {nutrients && nutrients.map((nutrient) =>
-//                 <tr>
-//                   <th scope="row">{nutrient[0]}</th>
-//                   <td>{nutrient[1]}</td>
-//                   <td>{nutrient[2]}</td>
-//                 </tr>
-//               )}
-//             </tbody>
-//           </table>
-//         </div>
-//       </div>
-//     </div>
-//     </div>
-//
-//
-// const stateToPropertyMapper = (state, ownProps) => ({
-//   itemId: ownProps.match.params.itemId,
-//   amount: state.resultItemReducer.amount,
-//   originalName: state.resultItemReducer.originalName,
-//   possibleUnits: state.resultItemReducer.possibleUnits,
-//   possibleUnit: state.resultItemReducer.possibleUnit,
-//   aisle: state.resultItemReducer.aisle,
-//   categoryPath: state.resultItemReducer.categoryPath,
-//   image: state.resultItemReducer.image,
-//   updated:state.resultItemReducer.updated,
-//   nutrients: state.resultItemReducer.nutrients,
-//   updatedParams: state.resultItemReducer.updatedParams,
-//
-// })
-// const propertyToDispatchMapper = (dispatch) => ({
-//   getInformationItem: (itemId) => {getInformationItem(dispatch, itemId)},
-//   setUpdated: (updated) => setUpdated(dispatch, updated),
-//   onChangeAmount: (amount) => onChangeAmount(dispatch, amount),
-//   updatePossibleUnit: (unit) => updatePossibleUnit(dispatch, unit),
-//   getInformationItemWithParams: (itemId, amount, unit) => getInformationItemWithParams(dispatch, itemId, amount, unit),
-//   setUpdateParams: (updateParams) => setUpdateParams(dispatch, updateParams),
-// })
-
-// export default withRouter(connect(stateToPropertyMapper, propertyToDispatchMapper) (resultItemComponent))
