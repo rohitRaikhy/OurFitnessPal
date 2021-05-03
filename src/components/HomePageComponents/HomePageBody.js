@@ -22,7 +22,6 @@ const HomePageBody = () =>
                Take control of your goals. Track calories, break down ingredients,
                and log activities with OurFitnessPal.
            </p>
-           {/*//TODO: Link this to the register page*/}
            <button
                className="btn btn-primary btn btn-outline-light wbdv-btn-mobile">
                <NavLink
@@ -31,13 +30,8 @@ const HomePageBody = () =>
                    className="sr-only">
                         (current)</span>Get Started</NavLink>
            </button>
-
-           {/*I NEED TO CHANGE THIS TO LINK LATER*/}
            <span className="pull-left">
                <h5>Already have an account?</h5>
-          {/*<a href="#">*/}
-          {/*    <h3>Login</h3>*/}
-          {/*</a>*/}
                <NavLink
                    className = "wbdv-link active text-primary"
                    to="/ourfitnesspal/login"><span
@@ -50,12 +44,8 @@ const HomePageBody = () =>
         </div>
         <div className="wbdv-homepage-container-search">
     <SearchBar/>
-    {/*<HomePageCards/>*/}
-    {/*<HomePageCardItems/>*/}
     </div>
     </div>
     </div>
-
-
 export default HomePageBody;
 
