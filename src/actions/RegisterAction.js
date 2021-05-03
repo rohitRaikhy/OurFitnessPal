@@ -2,15 +2,6 @@ import registerService from "../services/RegisterService";
 import userService from "../services/UserService";
 import {useHistory} from "react-router";
 
-
-// export const createUser = (dispatch, userId, email, password) => {
-//   let newUser = {
-//     userId: userId,
-//     email: email,
-//     password: password
-//   }
-
-//TODO: ADDED HERE TO ADD MORE INFO ABOUT USER
 export const createUser = (dispatch, userId, email, password, weight, heightFt, heightInch, location, gender, role) => {
   let notNull = userId != null && email != null && password != null && weight != null && heightFt != null &&
       heightInch != null &&  location != null && gender != null && role != null;
@@ -53,7 +44,6 @@ export const onChangeEmail = (dispatch, email) =>
 export const onChangePassword = (dispatch, password) =>
     dispatch({type:"ONCHANGE_PASSWORD", password})
 
-// ADDED HERE TO ADD TO PROFILE FOR ADDED USER INFO
 export const onChangeCurrentWeight = (dispatch, weight) =>
     dispatch({type:"ONCHANGE_CURRENT_WEIGHT", weight})
 
