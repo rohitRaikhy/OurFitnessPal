@@ -4,7 +4,7 @@
 description:  https://docs.google.com/document/d/14K1bA-clePCBSRgyJoTXUxL2AFst2OrhzSGEM3SYTzI/edit 
 
 ### Installation
-our client is based on React and the server is java server.
+Our client is based on React and the server is java server.
 - client side: to run locally: `npm run start-local`
 - server side: run demoApplication
 
