@@ -17,11 +17,6 @@ const loginReducer = (state=initialState, action) => {
           ...state,
           loginUser: state.loginStatus ? verified : null
         }
-    // case "SET_LOGIN_USER":
-    //   return {
-    //     ...state,
-    //     loginUser: action.user,
-    //   }
     case "ONCHANGE_USERID":
       return {
         ...state,
