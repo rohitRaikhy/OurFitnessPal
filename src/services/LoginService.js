@@ -14,7 +14,6 @@ const logout = () =>
     })
 
 const login = (userId) =>
-  // console.log(userId);
   fetch(`http://localhost:8080/ourfitnesspal/login/${userId}`, {
     method: 'POST',
     credentials: "include"
