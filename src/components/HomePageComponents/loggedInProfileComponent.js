@@ -14,18 +14,6 @@ const ProfileComponent = ({
   onChangeNewVideoUrl, newVideoUrl, addNewVideo}) =>
     <div className="wbdv-header-profile-name">
         <HomePageHeader/>
-        {/*<h4 className= "wbdv-profile-search">Enter a height: </h4>*/}
-        {/*<div className="col-sm-4">*/}
-        {/*<input id="height"*/}
-        {/*       className="form-control"*/}
-        {/*       placeholder="Enter a height"*/}
-        {/*/>*/}
-        {/*    <button className="btn btn-primary">*/}
-        {/*        Save*/}
-        {/*    </button>*/}
-        {/*</div>*/}
-
-
         {user &&
             <div className="container">
             <h2 className="text-primary">{user.userId}'s profile</h2>
@@ -51,8 +39,6 @@ const ProfileComponent = ({
                    className="form-control"
                    placeholder="Enter a profile name"
                    onChange={(event) => onChangeSearchName(event.target.value)}/>
-
-                {/*<Route path="/ourfitnesspal/userProfile" component={userSearchComponent({user})}/>*/}
                 <Link to={`/ourfitnesspal/userProfile/${searchName}`}>
                     <button
                         onClick={() => findUser(searchName)}
