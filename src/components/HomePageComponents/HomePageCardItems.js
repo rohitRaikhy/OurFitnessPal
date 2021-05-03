@@ -6,14 +6,7 @@ import "./cards-search.css"
 import "./Cards.css"
 
 const HomePageCardItems = ({search}) => {
-//     const HomePageCardItems = (props) => {
-
-    // const {label, image} = search.recipe
-    {console.log("search", search)}
-    // let randomSearch = search[1]
     let {label, image, calories, ingredients} = search.recipe
-    // let {label, image} = randomSearch.recipe
-
     return(
     <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
         <div className="card-deck wbdv-card-dim wbdv-cards-items wbdv-homepage-cards wbdv-cards-wrapper">
