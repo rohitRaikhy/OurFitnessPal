@@ -11,6 +11,5 @@ export const onChangePassword = (dispatch, password) =>
 export const logout = () =>
     loginService.logout();
 
-
 export const login = (dispatch, userId) =>
   loginService.login(userId)
