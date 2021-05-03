@@ -27,7 +27,6 @@ const registerReducer = (state=initialState, action) => {
         ...state,
         userExists: action.exist
       }
-          //TOOD: ADDED HERE TO ADD MORE STUFF ABOUT THE USER
     case "CREATE_USER":
       return {
         ...state,
