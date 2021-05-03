@@ -8,7 +8,6 @@ const initialState = {
     searchName: "",
     user: null,
     videos : [],
-    // videos : ["http://www.youtube.com/embed/oc4QS2USKmk"],
     recipes : [],
     editing: false,
     newVideoUrl: "",
