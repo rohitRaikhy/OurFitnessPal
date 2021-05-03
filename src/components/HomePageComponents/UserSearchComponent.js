@@ -27,7 +27,6 @@ const userSearchComponent = ({
         }
     </div>
 <div className="container">
-    {/*Email: {user.email}*/}
     {console.log(user)}
 
 </div>
