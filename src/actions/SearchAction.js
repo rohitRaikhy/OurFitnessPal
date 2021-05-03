@@ -11,8 +11,6 @@ export const searchItem = (dispatch, itemName) => {
         dispatch({type:"SEARCH_RESULT", results, itemName})})
 }
 
-
-
 export const getInformationItem = (dispatch, itemId) => {
     searchService.getDetailItem(itemId).then(details => dispatch({type: "SAVE_DETAIL_ITEM", details}))
 }
@@ -30,7 +28,6 @@ export const getInformationItemWithParams = (dispatch, itemId, amount, unit) => 
             newArray.push(newSub)
         }
         console.log(newArray)
-        // nutrients.forEach(nutrient => newArray.push(nutrient));
         dispatch({type: "SAVE_DETAIL_ITEM_WITH_PARAMS", newArray, amount, unit})})
 }
 
