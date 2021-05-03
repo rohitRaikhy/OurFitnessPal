@@ -4,9 +4,7 @@ import LoginComponent from "./LoginComponent";
 import RegisterComponent from "./RegisterComponent";
 import ProfileComponent from "./ProfileComponent";
 import {BrowserRouter as Router, BrowserRouter, Link, Route, Switch} from "react-router-dom";
-// import {findAllUsers} from "../services/HomeService";
 import {connect} from "react-redux";
-// import userService from "./services/UserService";
 import { login } from "../../actions/LoginActions";
 import userService from "../../services/UserService";
 import loginService from "../../services/LoginService";
@@ -27,22 +25,10 @@ import { profile } from "../../services/UserService";
 
 
 class RouterManagerComponent extends React.Component {
-    // state = {
-    //   users: [],
-    //   loginStatus:false,
-    // };
-
     state = {
         userLoggedIn : {},
     }
 
-    // componentDidMount() {
-    //   findAllUsers().then((users) => {
-    //     this.setState((prevState) => ({
-    //       users: users,
-    //     }));
-    //   });
-    // }
     findUserLoggedIn = () => {
 
     }
@@ -51,28 +37,12 @@ class RouterManagerComponent extends React.Component {
         profile().then(p => {
             p !== null &&
             console.log("DID MOUNT THIS PROFILE: " + p)
-            // this.props.login(p);
             this.setState((prevState) => ({
                 userLoggedIn : p
         }))})
-        // this.props.loginUser && this.props.login(this.props.loginUser);
     }
-    // componentDidUpdate() {
-    //     this.props.loginUser && profile().then(p => {
-    //         p !== null &&
-    //         console.log("DID UPDATE THIS PROFILE: " + p)
-    //         // this.props.login(p);
-    //         this.setState((prevState) => ({
-    //             userLoggedIn : p
-    //         }))})
-    // }
-
-    // logout = () =>
-    //     loginService.logout().then(status => this.props.history.push("/ourfitnesspal"))
-
     render() {
         return (
-            // <HomePageHeader/>
             <BrowserRouter>
                 <Switch>
                 <div>
@@ -97,14 +67,6 @@ class RouterManagerComponent extends React.Component {
                         path={["/ourfitnesspal/profile/:userId"]}
                         exact
                         component={loggedInProfileComponent}/>
-                    {/*<Route path="/ourfitnesspal/profile" exact>*/}
-                    {/*    <ProfileComponent/>*/}
-                    {/*</Route>*/}
-
-                    {/*//TODO: CHANGED TO MAINTAIN STATE WHEN REFRESHING*/}
-                    {/*<Route path={["/ourfitnesspal/search"]} exact >*/}
-                    {/*    <SearchComponent/>*/}
-                    {/*</Route>*/}
                     <Route path={["/ourfitnesspal/search/","/ourfitnesspal/search/:itemName" ]} exact >
                         <SearchComponent/>
                     </Route>
@@ -114,17 +76,7 @@ class RouterManagerComponent extends React.Component {
                         "/ourfitnesspal/search/details/:itemId/amount/:amount/units/"]} exact >
                            <ResultItemComponent/>
                     </Route>
-
-
-                    {/*<Route path={["/ourfitnesspal/search/details/:itemId"]}*/}
-                    {/*       component={ResultItemComponent} />*/}
-                    {/*This is the anonymous user*/}
                     <Route path="/ourfitnesspal/userProfile" component={userSearchComponent}/>
-                    {/*<Route*/}
-                    {/*    path={["/ourfitnesspal/userProfile",*/}
-                    {/*        "/ourfitnesspal/userProfile/:userId"]}*/}
-                    {/*    exact*/}
-                    {/*    component={ProfileComponent}/>*/}
                     <Route path="/ourfitnesspal/admin" exact>
                         <AdminPageComponent/>
                     </Route>
