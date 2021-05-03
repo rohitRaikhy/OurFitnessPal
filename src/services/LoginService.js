@@ -1,6 +1,3 @@
-//TODO: changed for heroku db
-// const USER_URL = "http://localhost:8080/ourfitnesspal/users";
-
 const USER_URL = "https://ourfitnesspalserver.herokuapp.com/ourfitnesspal/users";
 
 
@@ -22,9 +19,6 @@ const login = (userId) =>
     method: 'POST',
     credentials: "include"
   }).then(response => response.json())
-
-
-
 
 export default {
   findAllUsers,
