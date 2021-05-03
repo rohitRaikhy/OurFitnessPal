@@ -12,10 +12,7 @@ const HomePage = () =>
 
 <div>
     <div>
-        {/*<HomePageHeader/>*/}
         <Router>
-            {/*<NavbarTwo/>*/}
-            {/*<HomePageBody/>*/}
             <HomePageBody/>
         <Switch>
         <Route path = "/ourFitnessPal" exact component={HomePageBody}/>
