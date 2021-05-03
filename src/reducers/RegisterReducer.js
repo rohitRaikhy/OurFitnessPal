@@ -59,7 +59,6 @@ const registerReducer = (state=initialState, action) => {
         password: action.password
       }
 
-      // ADDED HERE TO ADD TO PROFILE FOR MORE USERS INFO
     case "ONCHANGE_CURRENT_WEIGHT":
       return {
         ...state,
