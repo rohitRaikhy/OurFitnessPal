@@ -149,33 +149,6 @@ const RegisterComponent = ({
           </div>
         </div>
       </form>
-
-
-        {/*/!*ROHIT ADDED HERE FOR MORE INFO FROM USER FOR PROFILE PAGE*!/*/}
-        {/*<h3 className="text-primary">Tell Us About Yourself</h3>*/}
-        {/*<div className="form-group row">*/}
-        {/*  <label htmlFor="weight" className="col-sm-2 col-form-label">*/}
-        {/*    Current Weight</label>*/}
-        {/*  <div className="col-sm-10">*/}
-        {/*    <input id="weght" type="email"*/}
-        {/*           className="form-control"*/}
-        {/*           placeholder="enter weight in lbs"*/}
-        {/*           onChange={(event) => onChangeCurrentWeight(event.target.value)}/>*/}
-        {/*  </div>*/}
-        {/*  {console.log(weight)}*/}
-        {/*  /!*<div className="form-group row">*!/*/}
-        {/*  /!*  <label htmlFor="weight" className="col-sm-2 col-form-label">*!/*/}
-        {/*  /!*    Current Weight</label>*!/*/}
-        {/*  /!*  <div className="col-sm-10">*!/*/}
-        {/*  /!*    <input id="weght" type="email"*!/*/}
-        {/*  /!*           className="form-control"*!/*/}
-        {/*  /!*           placeholder="enter weight in lbs"*!/*/}
-        {/*  /!*           onChange={(event) => onChangeCurrentWeight(event.target.value)}/>*!/*/}
-        {/*  /!*  </div>*!/*/}
-        {/*</div>*/}
-
-
-
     </div>
     </div>
 const stateToPropertyMapper = (state) => ({
@@ -185,8 +158,6 @@ const stateToPropertyMapper = (state) => ({
   email: state.registerReducer.email,
   userExists: state.registerReducer.userExists,
   passwordMatching: state.registerReducer.passwordMatching,
-
-  // ADDED HERE FOR ADDED USER STUFF
   weight: parseInt(state.registerReducer.weight),
   heightFt: parseInt(state.registerReducer.heightFt),
   heightInch: parseInt(state.registerReducer.heightInch),
@@ -197,8 +168,6 @@ const stateToPropertyMapper = (state) => ({
 })
 
 const propertyToDispatchMapper = (dispatch) => ({
-  // createUser : (userId, email, password) => createUser(dispatch, userId, email, password),
-  //TODO: ADDED HERE TO ADD MORE INFO ABOUT THE USER
   createUser : (userId, email, password, weight, heightFt, heightInch, location, gender, role) =>
       createUser(dispatch, userId, email, password, weight, heightFt, heightInch, location, gender, role),
 
@@ -209,8 +178,6 @@ const propertyToDispatchMapper = (dispatch) => ({
   setUserExists: (exist, userId) => {setUserExists(dispatch, exist); onChangeUserId(dispatch, userId)},
   passwordMatchingFn: (password, verifiedPassword) => password === verifiedPassword,
   setPasswordMatching: (matching, password) => {setPasswordMatching(dispatch, matching); onChangePassword(dispatch, password)},
-
-  // ADDED HERE TO ADD TO USERS PROFILE
   onChangeCurrentWeight: (weight) => onChangeCurrentWeight(dispatch, weight),
   onChangeHeightFt: (heightFt) => onChangeHeightFt(dispatch, heightFt),
   onChangeHeightInch: (heightInch) => onChangeHeightInch(dispatch, heightInch),
