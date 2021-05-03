@@ -22,7 +22,6 @@ const VideosOrRecipesCard = ({contents}) =>
                     </li>
 
                 )}
-
               </ul>
             </div>
           </div>
@@ -37,12 +36,6 @@ const stateToPropertyMapper = (state) => ({
 
 
 const propertyToDispatchMapper = (dispatch) => ({
-  // onChangeSearchName : (searchName) => {onChangeSearchName(dispatch, searchName)},
-  // findUser: (searchName) => {findUser(dispatch, searchName)},
-  // addVideo: (video) => addVideo(dispatch, video),
-  // addRecipe: (recipe) => addRecipe(dispatch, recipe),
-  // findAllVideoContentsByUserId: (userId) => findAllVideoContentsByUserId(dispatch, userId),
-  // setVideo: (videos) => setVideo(dispatch, videos)
 })
 
 export default connect(stateToPropertyMapper, propertyToDispatchMapper)(VideosOrRecipesCard);
