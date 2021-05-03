@@ -1,11 +1,8 @@
-// #Home component
-
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LoginComponent from "./HomePageComponents/LoginComponent";
 import ProfileComponent from "./HomePageComponents/ProfileComponent";
 import { BrowserRouter, Link, Route } from "react-router-dom";
-// import {findAllUsers} from "../services/HomeService";
 import {connect} from "react-redux";
 import userService from "../services/UserService";
 import SearchComponent from "./SearchComponent";
@@ -15,18 +12,6 @@ import HomePage from "./HomePageComponents/HomePage";
 import RegisterComponent from "./HomePageComponents/RegisterComponent";
 
 class HomeComponent extends React.Component {
-  // state = {
-  //   users: [],
-  //   loginStatus:false,
-  // };
-
-  // componentDidMount() {
-  //   findAllUsers().then((users) => {
-  //     this.setState((prevState) => ({
-  //       users: users,
-  //     }));
-  //   });
-  // }
   componentDidMount() {
     this.props.findAllUsers();
   }
@@ -41,7 +26,6 @@ class HomeComponent extends React.Component {
             <Link to="/ourfitnesspal/profile">Profile</Link> |
             <Link to="/ourfitnesspal/search">Search</Link>
             <Route path="/ourfitnesspal" exact>
-              {/*<HomeComponent/>*/}
               <HomePage/>
             </Route>
             <Route path="/ourfitnesspal/login" exact>
@@ -57,8 +41,6 @@ class HomeComponent extends React.Component {
               <SearchComponent/>
             </Route>
             <Route path="/ourfitnesspal/search/:itemId" component={ResultItemComponent}/>
-            {/*  <ResultItemComponent />*/}
-            {/*</Route>*/}
           </div>
           ,
         </BrowserRouter>
