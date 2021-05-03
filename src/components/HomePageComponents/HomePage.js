@@ -8,8 +8,6 @@ import HomePageBody from "./HomePageBody";
 import HomePageCards from "./HomePageCards";
 
 const HomePage = () =>
-
-
 <div>
     <div>
         <Router>
@@ -21,9 +19,6 @@ const HomePage = () =>
     </div>
 
 </div>
-
-
-
 export default HomePage;
 
 
