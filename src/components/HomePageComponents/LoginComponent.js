@@ -38,11 +38,6 @@ const LoginComponent = ({
           <div className="col-sm-10">
             <Link to={loginStatus ? `/ourfitnesspal/profile/${loginUserId}`: "/ourfitnesspal/login"} className="btn btn-primary btn-block"
                 onClick={() => {verifyUser(users, loginUserId, loginPassword); login(loginUserId)}}>Sign In</Link>
-            {console.log("users", " ", users)}
-            {console.log("loginUserID", " ", loginUserId)}
-            {console.log("login password", " ", loginPassword)}
-            {console.log("loginStatus", " ", loginStatus)}
-            {console.log("loginUser", " ", loginUser)}
             <div className="row">
               <div className="col-6">
                 <a href="#">Forgot Password?</a>
@@ -71,7 +66,5 @@ const propertyToDispatchMapper = (dispatch) => ({
   onChangePassword: (password) => onChangePassword(dispatch, password),
   login: (userId) => login(dispatch, userId)
 })
-
-
 
 export default connect(stateToPropertyMapper, propertyToDispatchMapper)(LoginComponent)
