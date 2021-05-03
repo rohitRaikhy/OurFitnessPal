@@ -34,7 +34,6 @@ const stateToPropertyMapper = (state) => ({
   loginStatus: state.loginReducer.loginStatus,
   loginUser: state.loginReducer.loginUser,
   userLoggedIn: state.userLoggedIn,
-  // editing: state.adminReducer.editing,
   roles: state.adminReducer.roles,
 })
 
