@@ -10,11 +10,6 @@ const AdminPageComponent = ({loginStatus, loginUser, userLoggedIn, users, setEdi
       <HomePageHeader/>
       <div className= "wbdv-register-page-margins ">
         <h1>ADMIN </h1>
-        {/*loginStatus: {loginStatus}*/}
-        {/*loginUser: {JSON.stringify(loginUser)}*/}
-        {/*/!*{loginUser.role === "Admin" &&  console.log("this is admin")}*!/*/}
-        {/*UserLoggedIn : {JSON.stringify(userLoggedIn)}*/}
-        {/*EDITING: {editing.toString()}*/}
         <table className="table table-hover">
           <thead>
           <tr>
