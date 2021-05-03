@@ -1,7 +1,5 @@
 import contentService from "../services/ContentService";
 
-
-
 export const findAllVideoContentsByUserId = (dispatch, userId) =>
     contentService.findAllContentsByUserId(userId).then((contents) => {
       let videos = contents.filter(c => c.type === "video");
