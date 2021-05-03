@@ -1,6 +1,3 @@
-//TODO: changed url for heroku db
-// const CONTENT_URL = "http://localhost:8080/ourfitnesspal/users"
-
 const CONTENT_URL = "https://ourfitnesspalserver.herokuapp.com/ourfitnesspal/users"
 
 const findAllContentsByUserId = (userId) =>
