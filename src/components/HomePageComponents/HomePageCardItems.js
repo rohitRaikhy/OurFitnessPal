@@ -29,8 +29,4 @@ const HomePageCardItems = ({search}) => {
         </div>
     </Grid>
     )}
-
-
-
-
 export default HomePageCardItems;
